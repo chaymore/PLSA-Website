@@ -1,7 +1,7 @@
 .Center {
   display: flex;
   align-items: center;
-  padding-top: 150px;
+  padding-top: 250px;
   justify-content: center;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   Color: White;
@@ -29,7 +29,7 @@
    background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.4)), url("https://bit.ly/42d8kSz");
    background-size: cover;
    background-position: center;
-   height: 350px;
+   height: 500px;
 }
 
 .Body{
@@ -57,4 +57,27 @@ body{
 
 .Left a:hover{
   color:#0062B8;
+}
+
+.MenuBar{
+  display: flex;
+  position: absolute;
+  top: 500px;
+  background-color: #0062B8;
+  gap: 50px;
+  font-size: 20px;
+  height: 50px;
+  align-items: center;
+  width: 100%;
+  justify-content: space-around;
+  
+}
+
+.MenuBar a{
+  Color: White;
+  Text-Decoration: none;
+}
+
+.MenuBar a:hover{
+  color: lightgrey;
 }
