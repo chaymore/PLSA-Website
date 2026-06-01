@@ -5,6 +5,8 @@
   <link rel="stylesheet" href="index.css">
 </head>
 
+<body>
+  
 <div class="Body">
 
   <div class="Background_Image">
@@ -53,6 +55,47 @@
 </div>
 
 <footer>
+  <div class="footer-columns">
+    
+    <div class="footer-col">
+      <h3>Contact</h3>
+      <p>Email: prelawclub@byu.edu</p>
+    </div>
+
+    <div class="footer-col">
+      <h3>Resources</h3>
+      <a href="#">LSAT Prep</a>
+    </div>
+
+    <div class="footer-col">
+      <h3>Events</h3>
+      <a href="#">Calendar</a>
+    </div>
+
+    <div class="footer-col">
+      <h3>Connect</h3>
+      
+      <a href="https://www.instagram.com"         target="_blank" class="social-link">
+        <img                               src="https://cdnjs.cloudflare.com/ajax/libs/simple-icons/11.13.0/instagram.svg"     alt="Instagram" class="social-icon">
+        Instagram
+      </a>
+      
+      <a href="https://www.facebook.com"         target="_blank" class="social-link">
+      <img src="https://cdnjs.cloudflare.com/ajax/libs/simple-icons/11.13.0/facebook.svg" alt="Facebook" class="social-icon">
+        Facebook
+    </a>
+      
+    <a href="https://www.linkedin.com"         target="_blank" class="social-link">
+    <img src="https://cdnjs.cloudflare.com/ajax/libs/simple-icons/11.13.0/linkedin.svg" alt="LinkedIn" class="social-icon">
+    LinkedIn
+   </a>
+      
+   </div>
+
+  </div>
+</footer>
+
+<footer class="subfooter">
   <h1 class="footerheader">
     BYU Pre-law Student Association
   </h1>
@@ -60,3 +103,29 @@
   Provo, UT 84602, USA | &copy; BYU PLSA     2026
   </p>
 </footer>
+
+<script type="module">
+  // Import the functions you need from the SDKs you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/12.14.0/firebase-app.js";
+  import { getAnalytics } from "https://www.gstatic.com/firebasejs/12.14.0/firebase-analytics.js";
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
+
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  const firebaseConfig = {
+    apiKey: "AIzaSyAY-YSopstghfgsMaIV0QZx4L_zCk4SM08",
+    authDomain: "byu-plsa-website.firebaseapp.com",
+    projectId: "byu-plsa-website",
+    storageBucket: "byu-plsa-website.firebasestorage.app",
+    messagingSenderId: "284707903225",
+    appId: "1:284707903225:web:6200f80fa13249ad857428",
+    measurementId: "G-Q6LZ4W9EW2"
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+  const analytics = getAnalytics(app);
+</script>
+
+</body>
