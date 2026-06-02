@@ -30,10 +30,12 @@
 }
 
 .Background_Image {
-   background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.4)), url("https://bit.ly/42d8kSz");
-   background-size: cover;
-   background-position: center;
-   height: 500px;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.4)), url("https://bit.ly/42d8kSz");
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 500px;
 }
 
 .Body{
@@ -45,6 +47,8 @@
 body{
   margin: 0;
   padding: 0;
+  overflow-x: hidden;
+  box-sizing: border-box;
 }
 
 .Left{
@@ -95,10 +99,11 @@ footer{
 
 .subfooter{
   display: flex;
-  width: 100%;
+  left: 0;
+  right:0;
   Height: 125px;
   bottom: 0px;
-  text-align: center;
+  align-items: center;
   background-color:#002E5D;
   color: white;
   flex-direction: column;
@@ -124,6 +129,7 @@ footer{
     margin: 0 auto;
     padding: 40px 20px; 
     background-color: white;  
+    box-sizing: border-box;
 
 }
   
@@ -182,4 +188,43 @@ footer{
 .social-link:hover {
     color: #0046ad;
     text-decoration: underline;
+}
+
+.general{
+  position: absolute;
+  padding-top: 125px;
+  top: 550px;
+  left: 0;
+  right:0;
+}
+
+.general h1{
+  text-align: center;
+}
+
+.general p{
+  text-align: center;
+  padding-top:125px;
+  font-size: 20px;
+  line-height: 2.0;
+  padding-left:200px;
+  padding-right:200px;
+}
+
+.PLSAlogo{
+  position: absolute;
+  top: 35px;
+  left: 80px;
+  border-radius: 50%;
+  height: 250px;
+}
+
+.logo-circle{
+  position: absolute;
+  top: 35px;
+  right: 80px;
+  border-radius: 50%;
+  height: 250px; 
+  object-fit: cover;
+  object-position: center;
 }
