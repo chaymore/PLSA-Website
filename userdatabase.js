@@ -6,20 +6,21 @@ import { getFirestore, doc, setDoc, getDoc } from "https://www.gstatic.com/fireb
 import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/12.14.0/firebase-auth.js";
 
 // =========================================================================
-// 2. FIREBASE CONFIGURATION & INITIALIZATION
+// 2. FIREBASE CONFIGURATION & INITIALIZATION (Updated with your real keys!)
 // =========================================================================
 const firebaseConfig = {
-  apiKey: "AIzaSyAY-YSopstghfgsMaIV0QZx4L_zCk4SM08",
-  authDomain: "byu-plsa-website.firebaseapp.com",
-  projectId: "byu-plsa-website",
-  storageBucket: "byu-plsa-website.firebasestorage.app",
-  messagingSenderId: "284707903225",
-  appId: "1:284707903225:web:6200f80fa13249ad857428"
-};
-
-const app = initializeApp(firebaseConfig);
-const db = getFirestore(app);
-const auth = getAuth(app); // Initialize the Auth engine
+    apiKey: "AIzaSyCgnsXOyfslFAbZ9p2HqUvEp9s1TADjzCo", 
+    authDomain: "byu-plsa-website---2026.firebaseapp.com",
+    projectId: "byu-plsa-website---2026",
+    storageBucket: "byu-plsa-website---2026.firebasestorage.app",
+    messagingSenderId: "809387002089",
+    appId: "1:809387002089:web:671f78242bfb2c61c0c878",
+    measurementId: "G-KGBN870EDX"
+  };
+  
+  const app = initializeApp(firebaseConfig);
+  const db = getFirestore(app);
+  const auth = getAuth(app); // Initialize the Auth engine
 
 // =========================================================================
 // 3. DATABASE & AUTH FUNCTIONS
@@ -86,49 +87,51 @@ export async function loginUser(email, password) {
 // 4. BUTTON EVENT LISTENERS (Multi-Page Safe)
 // =========================================================================
 document.addEventListener("DOMContentLoaded", () => {
-  const createUserBtn = document.getElementById("createUserBtn");
-  const loginBtn = document.getElementById("loginBtn");
-
-  // --- Handle Registration (create-account.html) ---
-  if (createUserBtn) {
-    createUserBtn.addEventListener("click", async () => {
-      const email = document.getElementById("emailInput").value.trim();
-      const password = document.getElementById("passwordInput").value.trim();
-      const name = document.getElementById("nameInput").value.trim();
-      const role = document.getElementById("roleInput").value.trim();
-
-      if (!email || !password || !name || !role) {
-        alert("Please fill out all fields.");
-        return;
-      }
-
-      if (password.length < 6) {
-        alert("Password must be at least 6 characters long.");
-        return;
-      }
-
-      try {
-        await registerNewUser(email, password, name, role);
-        alert("Account and Database Profile created successfully!");
-        window.location.href = "index.html";
-      } catch (err) {
-        alert("Registration failed: " + err.message);
-      }
-    });
-  }
-
-  // --- Handle Login (login.html) ---
-  if (loginBtn) {
-    loginBtn.addEventListener("click", async () => {
-      const email = document.getElementById("emailInput").value.trim();
-      const password = document.getElementById("passwordInput").value.trim();
-
-      if (!email || !password) {
-        alert("Please enter both your email and password.");
-        return;
-      }
-
-      await loginUser(email, password);
-    });
-  }
-});
+    const createUserBtn = document.getElementById("createUserBtn");
+    const loginBtn = document.getElementById("loginBtn");
+  
+    // --- Handle Registration (create-account.html) ---
+    if (createUserBtn) {
+      createUserBtn.addEventListener("click", async () => {
+        const email = document.getElementById("emailInput").value.trim();
+        const password = document.getElementById("passwordInput").value.trim();
+        const name = document.getElementById("nameInput").value.trim();
+        const role = document.getElementById("roleInput").value.trim();
+  
+        if (!email || !password || !name || !role) {
+          alert("Please fill out all fields.");
+          return;
+        }
+  
+        if (password.length < 6) {
+          alert("Password must be at least 6 characters long.");
+          return;
+        }
+  
+        try {
+          await registerNewUser(email, password, name, role);
+          alert("Account and Database Profile created successfully!");
+          window.location.href = "../index.html";
+        } catch (err) {
+          alert("Registration failed: " + err.message);
+        }
+      });
+    }
+  
+    // --- Handle Login (login.html) ---
+    if (loginBtn) {
+      loginBtn.addEventListener("click", async () => {
+        const email = document.getElementById("emailInput").value.trim();
+        const password = document.getElementById("passwordInput").value.trim();
+  
+        if (!email || !password) {
+          alert("Please enter both your email and password.");
+          return;
+        }
+  
+        console.log("Searching database for user...");
+        await loginUser(email, password);
+      });
+    
+    }
+  });
