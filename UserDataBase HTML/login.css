@@ -1,0 +1,51 @@
+/* Consistent, clean styling to match your login page */
+body {
+    font-family: Arial, sans-serif;
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+h2 {
+    color: #002e5d; /* BYU Blue vibe */
+    margin-bottom: 20px;
+}
+.form-group {
+    margin-bottom: 15px;
+}
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+input[type="text"], select {
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+}
+button {
+    background-color: #002e5d;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+    font-size: 16px;
+    margin-top: 10px;
+}
+button:hover {
+    background-color: #001e3d;
+}
+.nav-links {
+    margin-top: 20px;
+    display: block;
+    text-align: center;
+    color: #002e5d;
+    text-decoration: none;
+}

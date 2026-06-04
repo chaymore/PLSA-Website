@@ -1,0 +1,92 @@
+/* =========================================================================
+   CREATE ACCOUNT PAGE STYLES (BYU PLSA DIRECTORY)
+   ========================================================================= */
+
+/* Reset and base page layout */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f6f9; /* Soft background tint */
+    max-width: 420px;
+    margin: 60px auto;
+    padding: 30px;
+    border: 1px solid #dbe1e8;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0, 46, 93, 0.06);
+}
+
+h2 {
+    color: #002e5d; /* BYU Blue */
+    margin-top: 0;
+    margin-bottom: 24px;
+    text-align: center;
+    font-size: 24px;
+}
+
+/* Form block groups */
+.form-group {
+    margin-bottom: 18px;
+}
+
+label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: 600;
+    color: #333333;
+    font-size: 14px;
+}
+
+/* Input, Password, and Dropdown Selectors */
+input[type="text"], 
+input[type="password"], 
+select {
+    width: 100%;
+    padding: 10px 12px;
+    box-sizing: border-box;
+    border: 1px solid #bccbc6;
+    border-radius: 6px;
+    font-size: 15px;
+    background-color: #ffffff;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Interactive focus glow when clicking into a field */
+input[type="text"]:focus, 
+input[type="password"]:focus, 
+select:focus {
+    outline: none;
+    border-color: #002e5d;
+    box-shadow: 0 0 0 3px rgba(0, 46, 93, 0.15);
+}
+
+/* Submit Button Layout */
+button {
+    background-color: #002e5d;
+    color: white;
+    padding: 12px 15px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    width: 100%;
+    font-size: 16px;
+    font-weight: bold;
+    margin-top: 12px;
+    transition: background-color 0.2s ease;
+}
+
+button:hover {
+    background-color: #001e3d; /* Dark navy on hover */
+}
+
+/* Bottom Navigation Link */
+.nav-links {
+    margin-top: 24px;
+    display: block;
+    text-align: center;
+    color: #002e5d;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.nav-links:hover {
+    text-decoration: underline;
+}
