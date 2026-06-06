@@ -182,3 +182,21 @@ footer{
     color: #0046ad;
     text-decoration: underline;
 }
+
+.calendar-container{
+  display: flex;
+  justify-content: center; /* Centers the calendar horizontally */
+    
+  /* Edit these to change the location on your page: */
+  margin-top: 200px;       /* Adds space above the calendar */
+  margin-bottom: 50px;    /* Adds space below the calendar */
+  padding: 0 20px;        /* Keeps it from hitting the screen edges on mobile */
+
+  /* Controls how wide the calendar can get */
+  width: 100%;
+  max-width: 1100px;      /* Makes it large, but keeps it readable */
+    
+  /* Optional: Centering the container itself if it's inside a larger layout */
+  margin-left: auto;
+  margin-right: auto;
+}
