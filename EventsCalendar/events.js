@@ -25,27 +25,32 @@ async function fetchUpcomingEvents() {
             const startStr = event.start.dateTime || event.start.date;
             const endStr = event.end.dateTime || event.end.date;
             
-            const startDate = new Date(startStr);
-            const endDate = new Date(endStr);
-            
-            // 2. Format the main date (e.g., "Jun 15")
-            const dateOptions = { month: 'short', day: 'numeric' };
-            const formattedDate = startDate.toLocaleDateString('en-US', dateOptions);
-            
-            // 3. Handle time ranges for timed vs all-day events
+            let startDate, endDate;
             let timeRange = '';
-            
+            const dateOptions = { month: 'short', day: 'numeric' };
+
+            // 2. Check if it's a timed event or an all-day event
             if (event.start.dateTime) {
-                // Settings for just the time portion
+                // Timed event: Parse normally with timezone data intact
+                startDate = new Date(startStr);
+                endDate = new Date(endStr);
+                
                 const timeOptions = { hour: '2-digit', minute: '2-digit' };
                 const startTimeFormatted = startDate.toLocaleTimeString('en-US', timeOptions);
                 const endTimeFormatted = endDate.toLocaleTimeString('en-US', timeOptions);
                 
                 timeRange = `, ${startTimeFormatted} - ${endTimeFormatted}`;
             } else {
-                // It's an all-day event, so we don't display a time range
+                // All-day event: Force local time parsing by replacing '-' with '/'
+                // This stops the browser from subtracting hours for your timezone!
+                const localStartDateStr = startStr.replace(/-/g, '/');
+                startDate = new Date(localStartDateStr);
+                
                 timeRange = ' (All Day)';
             }
+            
+            // 3. Format the main date cleanly (e.g., "Jun 15")
+            const formattedDate = startDate.toLocaleDateString('en-US', dateOptions);
             
             const eventTitle = event.summary || 'Untitled Event';
             
