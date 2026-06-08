@@ -269,6 +269,15 @@ footer{
   margin-left:100px;
   text-align:center;
   width:800px;
+  height:400px;
+
+  background-image: linear-gradient(rgba(249, 249, 249, 0.90), rgba(249, 249, 249, 0.90)), 
+  url(../Images/BYU\ logo.jpg);
+                    
+  /* 2. BACKGROUND POSITIONING RULES */
+  background-size: contain;     /* Keeps the BYU logo completely visible without cutting it off */
+  background-position: center;  /* Centers the logo inside the text column */
+  background-repeat: no-repeat; /* Prevents the logo from repeating/tiling */
 }
 
 .generaleventstext h2{
