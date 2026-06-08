@@ -185,7 +185,7 @@ footer{
 
 .subheader{
   display: relative;
-  margin-top: 500px;
+  margin-top: 600px;
   text-align: center;
   
 }
@@ -195,7 +195,7 @@ footer{
   justify-content: center; /* Centers the calendar horizontally */
     
   /* Edit these to change the location on your page: */
-  margin-top: 30px;       /* Adds space above the calendar */
+  margin-top: 50px;       /* Adds space above the calendar */
   margin-bottom: 50px;    /* Adds space below the calendar */
   padding: 0 20px;        /* Keeps it from hitting the screen edges on mobile */
 
@@ -211,7 +211,7 @@ footer{
 .events-sidebar {
   position: absolute;
   right:100px;
-  top: 525px;
+  top: 600px;
   width: 300px;
   padding: 20px;
   background-color: #f9f9f9;
@@ -265,7 +265,7 @@ footer{
 
 .generaleventstext{
   position:relative;
-  margin-top: 200px;
+  margin-top: 275px;
   margin-left:100px;
   text-align:center;
   width:800px;

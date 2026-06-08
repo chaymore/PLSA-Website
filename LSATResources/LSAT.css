@@ -188,15 +188,27 @@ footer{
   margin-top: 50px;
   margin-left:auto;
   margin-right: auto;
-  text-align:center;
+  text-align:right;
+  background-color: white;
 }
 
 .general h2{
   font-size: 35px;
+  position:relative;
+  top:170px;
+  right:100px;
 }
 
 .general p{
   font-size: 20px;
-  margin-left: 200px;
-  margin-right: 200px;
+  margin-left: 450px;
+  margin-right: 75px;
+}
+
+.general img{
+  position:relative;
+  bottom: 50px;
+  right:750px;
+  width:500px;
+  height:auto;
 }
