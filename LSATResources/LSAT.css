@@ -182,3 +182,21 @@ footer{
     color: #0046ad;
     text-decoration: underline;
 }
+
+.general{
+  position:relative;
+  margin-top: 50px;
+  margin-left:auto;
+  margin-right: auto;
+  text-align:center;
+}
+
+.general h2{
+  font-size: 35px;
+}
+
+.general p{
+  font-size: 20px;
+  margin-left: 200px;
+  margin-right: 200px;
+}
