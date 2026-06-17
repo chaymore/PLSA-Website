@@ -228,3 +228,11 @@ footer{
   object-fit: cover;
   object-position: center;
 }
+
+#logged-out-nav, #logged-in-nav {
+  display: flex;         /* Forces items into a row */
+  flex-direction: row;   
+  gap: 30px;             /* Adds clean spacing between the links */
+  align-items: center;   /* Keeps them vertically centered */
+  padding-right: 10px;
+}

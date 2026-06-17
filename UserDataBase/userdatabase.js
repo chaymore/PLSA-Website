@@ -136,4 +136,32 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
+// 1. Grab your newly created navigation wrappers
+const loggedOutNav = document.getElementById('logged-out-nav');
+const loggedInNav = document.getElementById('logged-in-nav');
+const logoutBtn = document.getElementById('logout-btn');
 
+// 2. Listen for the user logging in or out
+// Note: Replace 'auth' with whatever your initialized Firebase auth variable is named
+auth.onAuthStateChanged((user) => {
+  if (user) {
+    // User is signed in -> Hide Auth, Show Dashboard/Log Out
+    loggedOutNav.style.display = 'none';
+    loggedInNav.style.display = 'flex'; // Use 'flex' or 'block' depending on your CSS layout
+  } else {
+    // User is signed out -> Show Auth, Hide Dashboard/Log Out
+    loggedOutNav.style.display = 'flex';
+    loggedInNav.style.display = 'none';
+  }
+});
+
+// 3. Handle the Logout button click action
+logoutBtn.addEventListener('click', (e) => {
+  e.preventDefault();
+  auth.signOut().then(() => {
+    console.log('User signed out successfully.');
+    // The onAuthStateChanged listener above will instantly reset the navbar for you!
+  }).catch((error) => {
+    console.error('Error signing out:', error);
+  });
+});
