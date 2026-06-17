@@ -183,20 +183,37 @@ footer{
     text-decoration: underline;
 }
 
-.general{
-  position:relative;
-  margin-top: 120px;
-  margin-left: 120px;
+.general {
+  display: flex;
+  justify-content: space-between; 
+  gap: 20px;
+  width: 100%;
+  margin-top: 50px;
+  margin-left: auto;
   margin-right: auto;
-  text-align:left;
-  width: 50%;
 }
 
-.general h2{
+/* Add this to tell the text group to take up the left side smoothly */
+.general .text-container {
+  flex: 1;
+  text-align: left; /* Optional: forces the text to align left instead of center */
+  padding-left: 100px;
+}
+
+.general h2 {
   font-size: 35px;
+  margin-bottom: 10px; /* Gives some breathing room above the paragraph */
+  align-items: flex-start;
+  padding-top: 30px;
 }
 
-.general p{
+.general p {
   font-size: 20px;
   line-height: 1.6;
+  padding-top: 35px;
+}
+
+.general img {
+  width: 50%; /* Adjust as needed so it doesn't crowd the text */
+  height: 100%;
 }
