@@ -203,6 +203,7 @@ footer{
   font-size: 20px;
   margin-left: 450px;
   margin-right: 75px;
+  padding-bottom: 50px;
 }
 
 .general img{
@@ -211,4 +212,5 @@ footer{
   right:750px;
   width:500px;
   height:auto;
+  image-rendering: -webkit-optimize-contrast;
 }
