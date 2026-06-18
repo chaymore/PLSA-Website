@@ -213,17 +213,16 @@ footer{
 
 .PLSAlogo{
   position: absolute;
-  top: 45px;
+  height: 360px;
+  top: -10px;
   left: 80px;
-  border-radius: 50%;
-  height: 250px;
+  clip-path: inset(15% 0% 15% 0%);
 }
 
 .logo-circle{
   position: absolute;
   top: 45px;
   right: 80px;
-  border-radius: 50%;
   height: 250px; 
   object-fit: cover;
   object-position: center;
@@ -232,7 +231,7 @@ footer{
 #logged-out-nav, #logged-in-nav {
   display: flex;         /* Forces items into a row */
   flex-direction: row;   
-  gap: 30px;             /* Adds clean spacing between the links */
+  gap: 50px;             /* Adds clean spacing between the links */
   align-items: center;   /* Keeps them vertically centered */
   padding-right: 10px;
 }
