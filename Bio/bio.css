@@ -200,3 +200,73 @@ footer{
   margin-left: 200px;
   margin-right: 200px;
 }
+
+/* --- Horizontal Alumni Rows Layout --- */
+
+/* 1. Reset margins for all text inside the cards to stop the crushing effect */
+.general .bio-card h3,
+.general .bio-card p {
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+  text-align: left;
+}
+
+/* 2. Main container stacks the rows vertically */
+.bio-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;          /* Space between each person's row */
+  width: 85%;         /* Spreads across the page nicely */
+  max-width: 1100px;  /* Stops it from getting awkwardly wide on massive monitors */
+  margin: 50px auto 100px auto;
+}
+
+/* 3. Individual card layout - makes image and text sit side-by-side */
+.bio-card {
+  display: flex;
+  flex-direction: row; /* Horizontal layout */
+  align-items: center; /* Centers items vertically relative to each other */
+  gap: 40px;           /* Space between the image and the text block */
+  background-color: white;
+  border-radius: 8px;
+  padding: 30px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
+  border-left: 5px solid #002E5D; /* Dark blue accent line on the left */
+}
+
+/* 4. Fix profile images from shrinking or distorting */
+.bio-img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0; /* Prevents the image from being squeezed horizontally */
+  border: 3px solid #E0E0E0;
+}
+
+/* 5. Text content container inside the row */
+.bio-content {
+  flex-grow: 1;
+}
+
+.bio-card h3 {
+  color: #002E5D;
+  font-size: 1.5rem;
+  margin: 0 0 8px 0 !important;
+}
+
+.bio-meta {
+  font-size: 0.95rem;
+  color: #555555;
+  margin: 4px 0 !important;
+}
+
+.bio-text {
+  font-size: 1rem;
+  color: #333333;
+  line-height: 1.5;
+  margin-top: 15px !important;
+  font-style: italic;
+}
