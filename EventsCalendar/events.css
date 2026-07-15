@@ -270,6 +270,7 @@ footer{
   text-align:center;
   width:800px;
   height:400px;
+  line-height: 2.25;
 
   background-image: linear-gradient(rgba(249, 249, 249, 0.90), rgba(249, 249, 249, 0.90)), 
   url(../Images/BYU\ logo.jpg);
@@ -281,9 +282,9 @@ footer{
 }
 
 .generaleventstext h2{
-  font-size: 35px;
+  font-size: 37px;
 }
 
 .generaleventstext p{
-  font-size: 20px;
+  font-size: 27px;
 }

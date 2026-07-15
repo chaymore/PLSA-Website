@@ -197,20 +197,20 @@ footer{
   flex: 1;
   text-align: right;
   padding-right: 100px;
-  padding-top: 75px;
+  padding-top: 40px;
 }
 
 .general h2 {
   font-size: 35px;
   margin-bottom: 10px;
   align-items: flex-start;
-  padding-top: 30px;
+  padding-top: 20px;
 }
 
 .general p {
-  font-size: 20px;
-  line-height: 1.6;
-  padding-top: 35px;
+  font-size: 25px;
+  line-height: 2.15;
+  padding-top: 25px;
   padding-left: 20px;
 }
 
