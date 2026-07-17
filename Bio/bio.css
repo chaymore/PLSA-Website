@@ -75,7 +75,7 @@ body{
   align-items: center;
   width: 100%;
   justify-content: space-around;
-  
+  z-index: 2;
 }
 
 .MenuBar a{
@@ -189,6 +189,7 @@ footer{
   margin-left:auto;
   margin-right: auto;
   text-align:center;
+  z-index: 2;
 }
 
 .general h2{
@@ -211,6 +212,7 @@ footer{
   padding-left: 0 !important;
   padding-right: 0 !important;
   text-align: left;
+  z-index: 2;
 }
 
 /* 2. Main container stacks the rows vertically */
@@ -221,6 +223,7 @@ footer{
   width: 85%;         /* Spreads across the page nicely */
   max-width: 1100px;  /* Stops it from getting awkwardly wide on massive monitors */
   margin: 50px auto 100px auto;
+  z-index: 2;
 }
 
 /* 3. Individual card layout - makes image and text sit side-by-side */
@@ -234,6 +237,7 @@ footer{
   padding: 30px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
   border-left: 5px solid #002E5D; /* Dark blue accent line on the left */
+  z-index: 2;
 }
 
 /* 4. Fix profile images from shrinking or distorting */
@@ -244,23 +248,27 @@ footer{
   object-fit: cover;
   flex-shrink: 0; /* Prevents the image from being squeezed horizontally */
   border: 3px solid #E0E0E0;
+  z-index: 2;
 }
 
 /* 5. Text content container inside the row */
 .bio-content {
   flex-grow: 1;
+  z-index: 2;
 }
 
 .bio-card h3 {
   color: #002E5D;
   font-size: 1.5rem;
   margin: 0 0 8px 0 !important;
+  z-index: 2;
 }
 
 .bio-meta {
   font-size: 0.95rem;
   color: #555555;
   margin: 4px 0 !important;
+  z-index: 2;
 }
 
 .bio-text {
@@ -269,6 +277,7 @@ footer{
   line-height: 1.5;
   margin-top: 15px !important;
   font-style: italic;
+  z-index: 2;
 }
 
 .backgroundimg{
@@ -278,4 +287,6 @@ footer{
 
   -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,0.7) 0%, rgba(0,0,0,.4) 60%, rgba(0,0,0,0) 100%);
   mask-image: linear-gradient(to bottom, rgba(0,0,0,0.7) 0%, rgba(0,0,0,.4) 60%, rgba(0,0,0,0) 100%);
+
+  z-index: 1;
 }
