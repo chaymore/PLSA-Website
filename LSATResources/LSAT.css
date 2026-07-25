@@ -19,32 +19,36 @@
      Top Header Navigation
      ========================================================================== */
   
-  .top-nav {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    padding: 25px 75px;
-    z-index: 20;
-  }
-  
-  .nav-links {
-    display: flex;
-    gap: 30px;
-  }
-  
-  .nav-links a {
-    color: #ffffff;
-    text-decoration: none;
-    font-weight: bold;
-    transition: color 0.2s ease;
-  }
-  
-  .nav-links a:hover {
-    color: #0062b8;
-  }
+     .top-nav {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 25px 75px;
+      z-index: 20;
+    }
+    
+    .nav-links,
+    .Right {
+      display: flex;
+      gap: 30px;
+    }
+    
+    .nav-links a,
+    .Right a {
+      color: #ffffff;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.2s ease;
+    }
+    
+    .nav-links a:hover,
+    .Right a:hover {
+      color: #0062b8;
+    }
   
   /* ==========================================================================
      Hero Section
