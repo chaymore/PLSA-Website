@@ -1,290 +1,315 @@
-.Center {
-  display: flex;
-  align-items: center;
-  padding-top: 215px;
-  justify-content: center;
-  font-family: Halyard Display, Inter, Helvetica Neue, Arial, sans-serif;
-  Color: White;
-}
+/* ==========================================================================
+   Base & Reset Styles
+   ========================================================================== */
 
-.Center h1{
-  font-size: 50px;
-}
-
-
-.Right {
-  display: flex;
-  gap: 30px;
-  position: absolute;
-  right: 75px;
-  top: 40px;   
-}
-
-.Right a {
-  color: white;
-  text-decoration: none;
-}
-
-.Right a:hover{ 
-  color: #0062B8;
-}
-
-.Background_Image {
-   background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.4)), url("https://bit.ly/42d8kSz");
-   background-size: cover;
-   background-position: center;
-   height: 500px;
-}
-
-.Body{
-  width: 100%;
-  background-color: #F9F9F9;
-  padding-bottom: 50px;
-}
-
-body{
-  margin: 0;
-  padding: 0;
-}
-
-.Left{
-  display:flex;
-  position: absolute;
-  top: 40px;
-  Left: 75px;
-  Gap: 30px;
-}
-
-.Left a{
-  color:white;
-  text-decoration:none;
-}
-
-.Left a:hover{
-  color:#0062B8;
-}
-
-.MenuBar{
-  display: flex;
-  position: absolute;
-  top: 500px;
-  background-color: #002E5D;
-  gap: 50px;
-  font-size: 20px;
-  height: 50px;
-  align-items: center;
-  width: 100%;
-  justify-content: space-around;
+   * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
   
-}
-
-.MenuBar a{
-  Color: White;
-  Text-Decoration: none;
-}
-
-.MenuBar a:hover{
-  color: lightgrey;
-}
-
-footer{
-  height: 400px;
-  background-color: white;
-  bottom: 125px;
-}
-
-.subfooter{
-  display: flex;
-  width: 100%;
-  Height: 125px;
-  bottom: 0px;
-  text-align: center;
-  background-color:#002E5D;
-  color: white;
-  flex-direction: column;
-  font-family: Arial, Helvetica, sans-       serif;
-}
-
-.subfooter h1{
-  padding-top:12px;
-}
-
-.subfooter h1,footer p{
-  margin: 10px;
-}
-
-.subfooter p{
-  font-size: 15px;
-}
-
-.footer-columns {
+  body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f9f9f9;
+    color: #333333;
+    line-height: 1.6;
+  }
+  
+  .Body {
+    width: 100%;
+    background-color: #f9f9f9;
+    padding-bottom: 50px;
+  }
+  
+  /* ==========================================================================
+     Header & Navigation
+     ========================================================================== */
+  
+  .Left,
+  .Right {
+    display: flex;
+    gap: 30px;
+    position: absolute;
+    top: 40px;
+    z-index: 10;
+  }
+  
+  .Left {
+    left: 75px;
+  }
+  
+  .Right {
+    right: 75px;
+  }
+  
+  .Left a,
+  .Right a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.2s ease;
+  }
+  
+  .Left a:hover,
+  .Right a:hover {
+    color: #0062b8;
+  }
+  
+  .MenuBar {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    gap: 50px;
+    position: absolute;
+    top: 500px;
+    width: 100%;
+    height: 50px;
+    background-color: #002e5d;
+    font-size: 20px;
+    z-index: 10;
+  }
+  
+  .MenuBar a {
+    color: #ffffff;
+    text-decoration: none;
+    transition: color 0.2s ease;
+  }
+  
+  .MenuBar a:hover {
+    color: #d3d3d3;
+  }
+  
+  /* ==========================================================================
+     Hero Section
+     ========================================================================== */
+  
+  .Background_Image {
+    position: relative;
+    height: 500px;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.4)), url("https://bit.ly/42d8kSz");
+    background-size: cover;
+    background-position: center;
+  }
+  
+  .Center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 215px;
+    color: #ffffff;
+    font-family: "Halyard Display", Inter, "Helvetica Neue", sans-serif;
+  }
+  
+  .Center h1 {
+    font-size: 50px;
+  }
+  
+  /* ==========================================================================
+     Main Content Layout
+     ========================================================================== */
+  
+  .main-container {
+    max-width: 1200px;
+    margin: 80px auto 40px;
+    padding: 0 20px;
+  }
+  
+  /* Side-by-side Hero Section (Text Box + Sidebar) */
+  .events-hero-layout {
+    display: flex;
+    gap: 40px;
+    align-items: stretch;
+    margin-bottom: 60px;
+  }
+  
+  .generaleventstext {
+    flex: 2;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    
+    /* BYU Logo Watermark Background */
+    background-image: linear-gradient(rgba(249, 249, 249, 0.92), rgba(249, 249, 249, 0.92)), 
+                      url("../Images/BYU logo.jpg");
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  
+  .generaleventstext h2 {
+    font-size: 32px;
+    color: #002e5d;
+    margin-bottom: 20px;
+  }
+  
+  .generaleventstext p {
+    font-size: 18px;
+    line-height: 1.8;
+    color: #444444;
+  }
+  
+  /* Sidebar Styling */
+  .events-sidebar {
+    flex: 1;
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 8px;
+    border-left: 5px solid #002e5d;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  }
+  
+  .events-sidebar h3 {
+    font-size: 22px;
+    color: #002e5d;
+    border-bottom: 2px solid #e0e0e0;
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+  }
+  
+  #events-list {
+    list-style: none;
+  }
+  
+  .event-item {
+    padding: 12px 0;
+    border-bottom: 1px solid #eeeeee;
+  }
+  
+  .event-item:last-child {
+    border-bottom: none;
+  }
+  
+  .event-title {
+    font-weight: bold;
+    color: #111111;
+    display: block;
+    margin-bottom: 4px;
+  }
+  
+  .event-date {
+    font-size: 0.85rem;
+    color: #666666;
+  }
+  
+  .no-events,
+  .loading {
+    color: #777777;
+    font-style: italic;
+    padding: 15px 0;
+  }
+  
+  /* ==========================================================================
+     Calendar Section
+     ========================================================================== */
+  
+  .calendar-section {
+    margin-top: 40px;
+  }
+  
+  .subheader h2 {
+    font-size: 30px;
+    color: #002e5d;
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  
+  .calendar-container {
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  }
+  
+  .calendar-container iframe {
+    width: 100%;
+    border: none;
+  }
+  
+  /* ==========================================================================
+     Footer Styles
+     ========================================================================== */
+  
+  .site-footer {
+    background-color: #ffffff;
+    border-top: 1px solid #e2e2e2;
+    margin-top: 60px;
+  }
+  
+  .footer-columns {
     display: flex;
     justify-content: space-between;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 40px 20px; 
-    background-color: white;  
-
-}
+    padding: 50px 20px;
+  }
   
-.footer-col {
+  .footer-col {
     flex: 1;
     margin: 0 15px;
-}
-
-
-.footer-col h3 {
+  }
+  
+  .footer-col h3 {
     font-family: "Halyard Display", sans-serif;
     font-size: 1rem;
     text-transform: uppercase;
     letter-spacing: 0.05em;
-    color: #002E5D;
-    margin-bottom: 16px;         
-}
+    color: #002e5d;
+    margin-bottom: 16px;
+  }
   
-.footer-col p{
-    margin-left: 0 !important;
-    padding-left: 0 !important;
-    text-align: left;
-}
-
-.footer-col a {
+  .footer-col p {
+    font-size: 0.95rem;
+    color: #333333;
+  }
+  
+  .footer-col a,
+  .social-link {
     display: block;
     color: #333333;
     text-decoration: none;
     margin-bottom: 10px;
     font-size: 0.95rem;
-}
-
-.footer-col a:hover {
-    text-decoration: underline;
-    color: #0062B8;
-}
+    transition: color 0.2s ease;
+  }
   
-.social-link {
+  .social-link {
     display: inline-flex;
     align-items: center;
     gap: 10px;
-    color: #333333;
-    text-decoration: none;
-    margin-bottom: 12px;
-    font-size: 0.95rem;
     width: 100%;
-}
-
-.social-icon {
+  }
+  
+  .social-icon {
     width: 20px;
     height: 20px;
     object-fit: contain;
-}
-
-.social-link:hover {
-    color: #0046ad;
-    text-decoration: underline;
-}
-
-.subheader{
-  display: relative;
-  margin-top: 600px;
-  text-align: center;
+  }
   
-}
-
-.calendar-container{
-  display: flex;
-  justify-content: center; /* Centers the calendar horizontally */
-    
-  /* Edit these to change the location on your page: */
-  margin-top: 50px;       /* Adds space above the calendar */
-  margin-bottom: 50px;    /* Adds space below the calendar */
-  padding: 0 20px;        /* Keeps it from hitting the screen edges on mobile */
-
-  /* Controls how wide the calendar can get */
-  width: 100%;
-  max-width: 1100px;      /* Makes it large, but keeps it readable */
-    
-  /* Optional: Centering the container itself if it's inside a larger layout */
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.events-sidebar {
-  position: absolute;
-  right:100px;
-  top: 600px;
-  width: 300px;
-  padding: 20px;
-  background-color: #f9f9f9;
-  border-left: 3px solid #002e5d; /* Optional branding accent color */
-  font-family: Arial, sans-serif;
-}
-
-.events-sidebar h3 {
-  margin-top: 0;
-  color: #333;
-  font-size: 1.3rem;
-  border-bottom: 1px solid #ddd;
-  padding-bottom: 10px;
-}
-
-#events-list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-/* Individual Event Styling */
-.event-item {
-  padding: 12px 0;
-  border-bottom: 1px solid #eee;
-}
-
-.event-item:last-child {
-  border-bottom: none;
-}
-
-.event-title {
-  font-weight: bold;
-  color: #111;
-  display: block;
-  margin-bottom: 4px;
-}
-
-.event-date {
-  font-size: 0.85rem;
-  color: #666;
-}
-
-/* Empty State / No Events Styling */
-.no-events {
-  color: #777;
-  font-style: italic;
-  padding: 20px 0;
-  text-align: center;
-}
-
-.generaleventstext{
-  position:relative;
-  margin-top: 275px;
-  margin-left:100px;
-  text-align:center;
-  width:800px;
-  height:400px;
-  line-height: 2.25;
-
-  background-image: linear-gradient(rgba(249, 249, 249, 0.90), rgba(249, 249, 249, 0.90)), 
-  url(../Images/BYU\ logo.jpg);
-                    
-  /* 2. BACKGROUND POSITIONING RULES */
-  background-size: contain;     /* Keeps the BYU logo completely visible without cutting it off */
-  background-position: center;  /* Centers the logo inside the text column */
-  background-repeat: no-repeat; /* Prevents the logo from repeating/tiling */
-}
-
-.generaleventstext h2{
-  font-size: 37px;
-}
-
-.generaleventstext p{
-  font-size: 27px;
-}
+  .footer-col a:hover,
+  .social-link:hover {
+    color: #0062b8;
+    text-decoration: underline;
+  }
+  
+  .subfooter {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 125px;
+    background-color: #002e5d;
+    color: #ffffff;
+    text-align: center;
+  }
+  
+  .subfooter h1 {
+    font-size: 20px;
+    margin-bottom: 8px;
+  }
+  
+  .subfooter p {
+    font-size: 14px;
+    opacity: 0.9;
+  }
