@@ -1,122 +1,120 @@
-
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BYU Pre-Law Student Association</title>
   <link rel="stylesheet" href="index.css">
 </head>
-
 <body>
-  
-<div class="Body">
 
-  <div class="Background_Image">
-    <div class="Center">
-      <h1 >BYU Pre-law Student Association </h1>
+  <!-- Top Navigation Header -->
+  <header class="top-nav">
+    <nav class="nav-links Left">
+      <a href="#">Homepage</a>
+      <a href="/Bio/bio.html">PLSA Bio</a>
+      <a href="/AboutLaw/law.html">About Law</a>
+      <a href="/LSATResources/LSAT.html">LSAT Resources</a>
+      <a href="/EventsCalendar/events.html">Events Calendar</a>
+    </nav>
+
+    <div class="Right">
+      <div id="logged-out-nav">
+        <a href="UserDataBase/login.html">Log In</a> 
+        <a href="UserDataBase/create_account.html">Create Account</a>
+      </div>
+      
+      <div id="logged-in-nav" style="display: none;">
+        <a href="#">Dashboard</a>
+        <a href="#" id="logout-btn">Log Out</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>BYU Pre-Law Student Association</h1>
+    </div>
+
+    <!-- Secondary Navigation MenuBar -->
+    <nav class="MenuBar">
+      <a href="#">Homepage</a>
+      <a href="/Bio/bio.html">PLSA Bio</a>
+      <a href="/AboutLaw/law.html">About Law</a>
+      <a href="/LSATResources/LSAT.html">LSAT Resources</a>
+      <a href="/EventsCalendar/events.html">Events Calendar</a>
+    </nav>
+  </section>
+
+  <!-- Main Body Content -->
+  <main class="main-container">
     
-      <div class=Left>
-        <a href="#">Homepage
-         </a>
-        <a href="/Bio/bio.html">PLSA Bio
-         </a>
-        <a href="/AboutLaw/law.html">About Law
-        </a>
-        <a href="/LSATResources/LSAT.html">LSAT Resources
-        </a>
-        <a href="/EventsCalendar/events.html">Events Calendar
-        </a>
-      </div>
-  
-      <div class="Right">
-        <div id="logged-out-nav">
-          <a href="UserDataBase/login.html">Log In</a> 
-          <a href="UserDataBase/create_account.html">Create Account</a>
-        </div>
-      
-        <div id="logged-in-nav" style="display: none;">
-          <a href="#">Dashboard</a>
-          <a href="#" id="logout-btn">Log Out</a>
-        </div>
-      </div>
-      
-      <div class="MenuBar">
-         <a href="#">Homepage
-         </a>
-         <a href="/Bio/bio.html">PLSA Bio
-         </a>
-         <a href="/AboutLaw/law.html">About Law
-         </a>
-         <a href="/LSATResources/LSAT.html">LSAT Resources
-         </a>
-         <a href="/EventsCalendar/events.html">Events Calendar
-         </a>
+    <!-- Welcome Card -->
+    <section class="welcome-card">
+      <div class="welcome-header-row">
+        <img class="PLSAlogo" src="Images/BYU PLSA Logo.JPG" alt="BYU Pre-Law Student Association Logo" loading="lazy">
         
+        <h1>Welcome to the BYU Pre-Law Student Association!</h1>
+        
+        <img class="logo-circle" src="Images/BYULaw.jpeg" alt="BYU Law Logo">
       </div>
+
+      <div class="welcome-text">
+        <p>
+          The BYU Pre-Law Student Association (PLSA) is a PPAC club that gives students the opportunity to network with other prelaw students and professionals, learn about law school and legal careers, and prepare to become competitive applicants to law school. Membership in the PLSA permits students access to the club's monthly meetings, which range from expert panels and LSAT workshops to club dinners and fun networking events. Additionally, club members will receive the PLSA newsletter, which will inform them of new opportunities at BYU to strengthen their law school applications and prepare for law school, as well as job and internship opportunities from local law firms.
+        </p>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Main Footer -->
+  <footer class="site-footer">
+    <div class="footer-columns">
       
+      <div class="footer-col">
+        <h3>Contact</h3>
+        <p>Email: prelawclub@byu.edu</p>
+      </div>
+
+      <div class="footer-col">
+        <h3>Resources</h3>
+        <a href="LSATResources/LSAT.html">LSAT Prep</a>
+        <a href="AboutLaw/law.html">About Law</a>
+        <a href="Bio/bio.html">PLSA Bio</a>
+      </div>
+
+      <div class="footer-col">
+        <h3>Events</h3>
+        <a href="EventsCalendar/events.html">Calendar</a>
+      </div>
+
+      <div class="footer-col">
+        <h3>Connect</h3>
+        <a href="https://www.instagram.com/byu_plsa/" target="_blank" class="social-link">
+          <img src="https://cdnjs.cloudflare.com/ajax/libs/simple-icons/11.13.0/instagram.svg" alt="Instagram" class="social-icon">
+          Instagram
+        </a>
+        <a href="https://www.facebook.com" target="_blank" class="social-link">
+          <img src="https://cdnjs.cloudflare.com/ajax/libs/simple-icons/11.13.0/facebook.svg" alt="Facebook" class="social-icon">
+          Facebook
+        </a>
+        <a href="https://www.linkedin.com" target="_blank" class="social-link">
+          <img src="https://cdnjs.cloudflare.com/ajax/libs/simple-icons/11.13.0/linkedin.svg" alt="LinkedIn" class="social-icon">
+          LinkedIn
+        </a>
+      </div>
+
     </div>
-  </div>
 
-  <div class="general">
-    <img class="PLSAlogo" src="Images/BYU PLSA Logo.JPG" alt="BYU Pre-Law Student Association Logo" loading="lazy">
-    <img class="logo-circle" src="Images/BYULaw.jpeg" alt="BYU Law">
-    <h1>
-      Welcome to the BYU Pre-law Student Association!
-    </h1>
-    <p>
-      The BYU Pre-Law Student Association (PLSA) is a PPAC club that gives students the opportunity to network with other prelaw students and professionals, learn about law school and legal careers, and prepare to become competitive applicants to law school. Membership in the PLSA permits students access to the club's monthly meetings, which range from expert panels and LSAT workshops to club dinners and fun networking events. Additionally, club members will receive the PLSA newsletter, which will inform them of new opportunities at BYU to strengthen their law school applications and prepare for law school, as well as job and internship opportunities from local law firms.
-    </p>
-  </div>
-</div>
-
-<footer>
-  <div class="footer-columns">
-    
-    <div class="footer-col">
-      <h3>Contact</h3>
-      <p>Email: prelawclub@byu.edu</p>
+    <!-- Subfooter Section -->
+    <div class="subfooter">
+      <h1 class="footerheader">BYU Pre-Law Student Association</h1>
+      <p>Provo, UT 84602, USA | &copy; BYU PLSA 2026</p>
     </div>
+  </footer>
 
-    <div class="footer-col">
-      <h3>Resources</h3>
-      <a href="LSATResources/LSAT.html">LSAT Prep</a>
-      <a href="AboutLaw/law.html">About Law</a>
-      <a href="Bio/bio.html">PLSA Bio</a>
-    </div>
-
-    <div class="footer-col">
-      <h3>Events</h3>
-      <a href="EventsCalendar/events.html">Calendar</a>
-    </div>
-
-    <div class="footer-col">
-      <h3>Connect</h3>
-      
-      <a href="https://www.instagram.com/byu_plsa/" target="_blank" class="social-link">
-        <img src="https://cdnjs.cloudflare.com/ajax/libs/simple-icons/11.13.0/instagram.svg" alt="Instagram" class="social-icon">
-        Instagram
-      </a>
-      
-      <a href="https://www.facebook.com" target="_blank" class="social-link">
-      <img src="https://cdnjs.cloudflare.com/ajax/libs/simple-icons/11.13.0/facebook.svg" alt="Facebook" class="social-icon">
-        Facebook
-    </a>
-      
-    <a href="https://www.linkedin.com" target="_blank" class="social-link">
-    <img src="https://cdnjs.cloudflare.com/ajax/libs/simple-icons/11.13.0/linkedin.svg" alt="LinkedIn" class="social-icon">
-    LinkedIn
-   </a>
-      
-   </div>
-
-</footer>
-
-<footer class="subfooter">
-  <h1 class="footerheader">
-    BYU Pre-law Student Association
-  </h1>
-  <p>
-  Provo, UT 84602, USA | &copy; BYU PLSA     2026
-  </p>
-</footer>
-
-<script type="module" src="UserDataBase/userdatabase.js"></script>
+  <script type="module" src="UserDataBase/userdatabase.js"></script>
 </body>
+</html>
