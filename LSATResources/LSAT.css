@@ -260,3 +260,67 @@
     font-size: 14px;
     opacity: 0.85;
   }
+
+  /* ==========================================================================
+   Three-Card Editable Resource Section
+   ========================================================================== */
+
+.resource-cards-section {
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+.resource-grid {
+  display: flex;
+  justify-content: space-between;
+  gap: 24px;                  /* Clean spacing between the three cards */
+  flex-wrap: wrap;           /* Allows cards to stack on smaller mobile screens */
+}
+
+.resource-card {
+  flex: 1;                    /* Forces all 3 cards to take equal width */
+  min-width: 280px;           /* Prevents boxes from getting too narrow before wrapping */
+  background-color: #FAFAFA;  /* Clean off-white background */
+  border: 1px solid #E5E5E5;  /* Subtle border outline */
+  border-radius: 8px;         /* Smooth rounded corners */
+  padding: 24px 28px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.04); /* Soft shadow effect */
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Subtle lift effect on hover */
+.resource-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.08);
+}
+
+/* Header styling inside the new cards */
+.resource-card h2 {
+  font-size: 1.25rem;
+  color: #002E5D;             /* BYU Navy Accent */
+  margin-top: 0;
+  margin-bottom: 12px;
+  font-weight: 700;
+}
+
+/* Body text inside the new cards */
+.resource-card p {
+  color: #333333;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.resourcestitle{
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  height: 100px;
+  align-items: center;
+  font-size: 50px;
+  padding-top: 90px;
+  padding-bottom: 50px;
+  text-decoration: underline;
+  color: #002E5D;
+}
