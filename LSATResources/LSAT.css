@@ -261,27 +261,79 @@
     opacity: 0.85;
   }
 
-  /* ==========================================================================
-   Three-Card Editable Resource Section
+/* ==========================================================================
+   Three-Card Editable Resource Section with Fading Background & Title
    ========================================================================== */
 
+/* Container */
 .resource-cards-section {
+  position: relative;
+  width: 100%;
   max-width: 1200px;
   margin: 40px auto;
-  padding: 0 20px;
+  padding: 60px 30px;
+  border-radius: 12px;
+  box-sizing: border-box; /* Ensures padding doesn't push width out */
 }
 
+/* Fading Background Image Layer */
+.resource-cards-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;             /* Stays firmly behind everything */
+  pointer-events: none;   /* Lets clicks pass straight through to content */
+  
+  background-image: url('../Images/ResoucePhoto.jpeg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+/* Mask effect: Starts slightly translucent at top and gradually dissolves to bottom */
+-webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,0.6) 0%, rgba(0,0,0,1) 25%, rgba(0,0,0,0) 100%);
+mask-image: linear-gradient(to bottom, rgba(0,0,0,0.6) 0%, rgba(0,0,0,1) 25%, rgba(0,0,0,0) 100%);
+}
+
+/* Title Styling (Position relative required for z-index to lift it) */
+.resourcestitle {
+  position: relative;     
+  z-index: 1;             
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  height: 100px; 
+  font-size: 50px;
+  padding-top: 50px;
+  margin-bottom: 75px;
+  margin-top: -10px;
+  color: #002E5D;     
+  background: rgba(255, 255, 255, 0.85); /* 85% solid white */
+  backdrop-filter: blur(6px);             /* Soft blur behind the box */
+  padding: 10px 30px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  display: inline-flex;   
+}
+
+/* Cards Grid Layout */
 .resource-grid {
+  position: relative;
+  z-index: 1;             /* Sits above the z-index: 0 background image */
   display: flex;
   justify-content: space-between;
-  gap: 24px;                  /* Clean spacing between the three cards */
-  flex-wrap: wrap;           /* Allows cards to stack on smaller mobile screens */
+  gap: 24px;                  
+  flex-wrap: wrap;           
 }
 
+/* Individual Cards */
 .resource-card {
   flex: 1;                    /* Forces all 3 cards to take equal width */
   min-width: 280px;           /* Prevents boxes from getting too narrow before wrapping */
-  background-color: #FAFAFA;  /* Clean off-white background */
+  background-color: rgba(250, 250, 250, 0.95); /* Off-white with 95% opacity for legibility */
   border: 1px solid #E5E5E5;  /* Subtle border outline */
   border-radius: 8px;         /* Smooth rounded corners */
   padding: 24px 28px;
@@ -295,7 +347,7 @@
   box-shadow: 0 8px 12px rgba(0, 0, 0, 0.08);
 }
 
-/* Header styling inside the new cards */
+/* Header styling inside the cards */
 .resource-card h2 {
   font-size: 1.25rem;
   color: #002E5D;             /* BYU Navy Accent */
@@ -304,23 +356,10 @@
   font-weight: 700;
 }
 
-/* Body text inside the new cards */
+/* Body text inside the cards */
 .resource-card p {
   color: #333333;
   font-size: 0.95rem;
   line-height: 1.6;
   margin: 0;
-}
-
-.resourcestitle{
-  display: flex;
-  width: 100%;
-  justify-content: center;
-  height: 100px;
-  align-items: center;
-  font-size: 50px;
-  padding-top: 90px;
-  padding-bottom: 50px;
-  text-decoration: underline;
-  color: #002E5D;
 }
