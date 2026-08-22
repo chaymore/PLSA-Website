@@ -3,132 +3,138 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="BYU PLSA helps students explore law, prepare for admission, and build community around the journey.">
   <title>BYU Pre-Law Student Association</title>
   <link rel="stylesheet" href="index.css">
+  <link rel="stylesheet" href="navigation.css">
 </head>
 <body>
 
-  <!-- Top Navigation Header -->
-  <header class="top-nav">
-    <nav class="nav-links Left">
-      <a href="#">Homepage</a>
-      <a href="/Bio/bio.html">PLSA Bio</a>
-      <a href="/AboutLaw/law.html">About Law</a>
-      <a href="/LSATResources/LSAT.html">LSAT Resources</a>
-      <a href="/EventsCalendar/events.html">Events Calendar</a>
+  <header class="site-navigation">
+    <a class="nav-brand" href="index.html" aria-label="BYU PLSA home">BYU PLSA</a>
+    <nav class="nav-links" aria-label="Primary navigation">
+      <a href="index.html" aria-current="page">Home</a>
+      <a href="Bio/bio.html">About PLSA</a>
+      <a href="AboutLaw/law.html">Explore Law</a>
+      <a href="LSATResources/LSAT.html">LSAT</a>
+      <a href="EventsCalendar/events.html">Events</a>
+      <a class="join-link" href="https://clubs.byu.edu/link/club/18295873486205435" target="_blank" rel="noopener noreferrer">Join PLSA</a>
     </nav>
-
-    <div class="Right">
-      <a href="https://clubs.byu.edu/link/club/18295873486205435" target="_blank" rel="noopener noreferrer">Join or Check Account Status</a> 
-    </div>
   </header>
 
-  <!-- Hero Section -->
-  <section class="hero">
+  <section class="hero" aria-labelledby="page-title">
     <div class="hero-content">
-      <h1>BYU Pre-Law Student Association</h1>
+      <h1 id="page-title">BYU Pre-Law Student Association</h1>
     </div>
-
-    <!-- Secondary Navigation MenuBar -->
-    <nav class="MenuBar">
-      <a href="#">Homepage</a>
-      <a href="/Bio/bio.html">PLSA Bio</a>
-      <a href="/AboutLaw/law.html">About Law</a>
-      <a href="/LSATResources/LSAT.html">LSAT Resources</a>
-      <a href="/EventsCalendar/events.html">Events Calendar</a>
-    </nav>
   </section>
 
-  <!-- Main Body Content -->
-  <main class="main-container">
-    
-    <!-- Welcome Header Row -->
-    <section class="welcome-header-row">
-      <div class="logo-wrapper">
-        <img class="PLSAlogo" src="Images/BYU PLSA Logo.JPG" alt="BYU Pre-Law Student Association Logo" loading="lazy">
+  <main>
+    <section class="pathways section-shell" aria-labelledby="pathways-title">
+      <div class="section-intro">
+        <p class="eyebrow">Start where you are</p>
+        <h2 id="pathways-title">There is no single path to law.</h2>
+        <p>Whether law is a new possibility or your next clear step, PLSA can help you move forward.</p>
       </div>
-      
-      <h1>Welcome to the BYU Pre-Law Student Association!</h1>
-      
-      <div class="logo-wrapper">
-        <img class="logo-circle" src="Images/BYULaw.jpeg" alt="BYU Law Logo">
+
+      <div class="pathway-grid">
+        <a class="pathway-card" href="AboutLaw/law.html">
+          <span class="pathway-number" aria-hidden="true">01</span>
+          <p class="pathway-label">Explore</p>
+          <h3>I’m curious about law.</h3>
+          <p>Learn what legal careers look like and decide whether law may be right for you.</p>
+          <span class="card-link">Explore the possibilities <span aria-hidden="true">→</span></span>
+        </a>
+
+        <a class="pathway-card" href="LSATResources/LSAT.html">
+          <span class="pathway-number" aria-hidden="true">02</span>
+          <p class="pathway-label">Prepare</p>
+          <h3>I’m preparing for the LSAT.</h3>
+          <p>Find practical resources, study support, and people preparing alongside you.</p>
+          <span class="card-link">Build your study plan <span aria-hidden="true">→</span></span>
+        </a>
+
+        <a class="pathway-card" href="AboutLaw/law.html">
+          <span class="pathway-number" aria-hidden="true">03</span>
+          <p class="pathway-label">Apply</p>
+          <h3>I’m thinking about applications.</h3>
+          <p>Get perspective on timelines, personal statements, school choice, and the road ahead.</p>
+          <span class="card-link">Plan your next steps <span aria-hidden="true">→</span></span>
+        </a>
       </div>
     </section>
 
-    <!-- Thick Divider Line -->
-    <hr class="title-divider">
-   
-    <!-- Welcome Paragraph Section -->
-    <section class="welcome-text">
-      <h3>What is the PLSA?</h3>
-      <p>
-        The BYU Pre-Law Student Association (PLSA) is a PPAC club that gives students the opportunity to network 
-        with other prelaw students and professionals, learn about law school and legal careers, and prepare to become 
-        competitive applicants to law school. Membership in the PLSA permits students access to the club's monthly meetings, 
-        which range from expert panels and LSAT workshops to club dinners and fun networking events. Additionally, 
-        club members will receive the PLSA newsletter, which will inform them of new opportunities at BYU to strengthen 
-        their law school applications and prepare for law school, as well as job and internship opportunities from local law firms.
-      </p>
+    <section class="event-section section-shell" aria-labelledby="event-title">
+      <div class="event-card">
+        <div class="event-date" aria-hidden="true">
+          <span>Fall</span>
+          <strong>2026</strong>
+        </div>
+        <div class="event-details">
+          <p class="eyebrow">Our next event</p>
+          <h2 id="event-title">Fall programming announcement coming soon.</h2>
+          <p>We’re planning the next opportunity to learn, ask questions, and meet other students on the pre-law path. Check back for the confirmed date, location, and details.</p>
+          <div class="event-meta" aria-label="Event status">
+            <span>Details to be announced</span>
+            <span>Provo, Utah</span>
+          </div>
+          <a class="button button-primary" href="EventsCalendar/events.html">View the events calendar</a>
+        </div>
+      </div>
     </section>
 
-    <!-- Thick Divider Line -->
-    <hr class="title-divider2">
+    <section class="community-section" aria-labelledby="community-title">
+      <div class="community-copy section-shell">
+        <p class="eyebrow eyebrow-light">A community around the journey</p>
+        <h2 id="community-title">Law feels more possible when you don’t navigate it alone.</h2>
+        <p>PLSA brings together students at every stage for expert panels, LSAT workshops, club dinners, practical updates, and connections that make the path clearer.</p>
+      </div>
 
-    <section class="second-paragraph">
-      <h3>How can I participate?</h3>
-      <p>
-        The PLSA has many different events that members can attend!
-      </p>
+      <div class="photo-strip" aria-label="PLSA community imagery and future event photography placeholders">
+        <div class="photo-placeholder photo-campus-community" role="img" aria-label="BYU students walking across campus beneath Y Mountain">
+          <span>BYU student community</span>
+          <small>PLSA photography coming soon</small>
+        </div>
+        <div class="photo-placeholder photo-placeholder-two" role="img" aria-label="Placeholder for a candid PLSA workshop photograph">
+          <span>LSAT workshop photo</span>
+          <small>Photo coming soon</small>
+        </div>
+        <div class="photo-placeholder photo-placeholder-three" role="img" aria-label="Placeholder for a candid PLSA community photograph">
+          <span>Student community photo</span>
+          <small>Photo coming soon</small>
+        </div>
+      </div>
     </section>
 
+    <section class="closing-section section-shell" aria-labelledby="closing-title">
+      <img class="closing-logo" src="Images/BYU PLSA Logo.JPG" alt="" loading="lazy">
+      <div class="closing-copy">
+        <p class="eyebrow">You belong here</p>
+        <h2 id="closing-title">You don’t need to have your career figured out to join PLSA.</h2>
+        <p>Come explore the profession, prepare for what’s next, and build relationships with people who understand the journey.</p>
+      </div>
+      <div class="closing-actions">
+        <a class="button button-primary" href="https://clubs.byu.edu/link/club/18295873486205435" target="_blank" rel="noopener noreferrer">Join PLSA</a>
+        <a class="button button-secondary" href="https://www.instagram.com/byu_plsa/" target="_blank" rel="noopener noreferrer">Follow on Instagram</a>
+      </div>
+    </section>
   </main>
 
-  <!-- Main Footer -->
   <footer class="site-footer">
-    <div class="footer-columns">
-      
-      <div class="footer-col">
-        <h3>Contact</h3>
-        <p>Email: prelawclub@byu.edu</p>
+    <div class="footer-inner">
+      <div class="footer-identity">
+        <h2>BYU Pre-Law Student Association</h2>
+        <p>Helping BYU students explore law, prepare for admission, and build a community around the journey.</p>
       </div>
-
-      <div class="footer-col">
-        <h3>Resources</h3>
-        <a href="LSATResources/LSAT.html">LSAT Prep</a>
-        <a href="AboutLaw/law.html">About Law</a>
-        <a href="Bio/bio.html">PLSA Bio</a>
+      <div class="footer-links">
+        <a href="mailto:prelawclub@byu.edu">prelawclub@byu.edu</a>
+        <a href="EventsCalendar/events.html">Events</a>
+        <a href="https://www.instagram.com/byu_plsa/" target="_blank" rel="noopener noreferrer">Instagram</a>
       </div>
-
-      <div class="footer-col">
-        <h3>Events</h3>
-        <a href="EventsCalendar/events.html">Calendar</a>
-      </div>
-
-      <div class="footer-col">
-        <h3>Connect</h3>
-        <a href="https://www.instagram.com/byu_plsa/" target="_blank" class="social-link">
-          <img src="https://cdnjs.cloudflare.com/ajax/libs/simple-icons/11.13.0/instagram.svg" alt="Instagram" class="social-icon">
-          Instagram
-        </a>
-        <a href="https://www.facebook.com" target="_blank" class="social-link">
-          <img src="https://cdnjs.cloudflare.com/ajax/libs/simple-icons/11.13.0/facebook.svg" alt="Facebook" class="social-icon">
-          Facebook
-        </a>
-        <a href="https://www.linkedin.com" target="_blank" class="social-link">
-          <img src="https://cdnjs.cloudflare.com/ajax/libs/simple-icons/11.13.0/linkedin.svg" alt="LinkedIn" class="social-icon">
-          LinkedIn
-        </a>
-      </div>
-
     </div>
-
-    <!-- Subfooter Section -->
     <div class="subfooter">
-      <h1 class="footerheader">BYU Pre-Law Student Association</h1>
-      <p>Provo, UT 84602, USA | &copy; BYU PLSA 2026</p>
+      <p>Provo, Utah 84602 <span aria-hidden="true">·</span> &copy; BYU PLSA 2026</p>
     </div>
   </footer>
 
-  <script type="module" src="UserDataBase/userdatabase.js"></script>
 </body>
 </html>
