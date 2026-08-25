@@ -434,3 +434,76 @@ a {
     transition: none;
   }
 }
+
+/* ==========================================================================
+   Mobile Footer
+   ========================================================================== */
+
+   @media (max-width: 768px) {
+
+    .site-footer {
+      margin-top: 50px;
+    }
+  
+    .footer-columns {
+      flex-direction: column;
+      padding: 35px 25px;
+      gap: 30px;
+    }
+  
+    .footer-col {
+      margin: 0;
+      width: 100%;
+    }
+  
+    .footer-col h3 {
+      margin-bottom: 12px;
+      font-size: 0.95rem;
+    }
+  
+    .footer-col a,
+    .social-link {
+      font-size: 0.95rem;
+      margin-bottom: 12px;
+    }
+  
+    .subfooter {
+      padding: 20px 15px;
+    }
+  
+    .subfooter h1 {
+      font-size: 18px;
+    }
+  
+    .subfooter p {
+      font-size: 13px;
+      line-height: 1.5;
+    }
+  }
+  
+  
+  /* Extra-small phones */
+  @media (max-width: 480px) {
+  
+    .footer-columns {
+      padding: 30px 20px;
+      gap: 25px;
+    }
+  
+    .footer-col h3 {
+      font-size: 0.9rem;
+    }
+  
+    .footer-col a,
+    .social-link {
+      font-size: 0.9rem;
+    }
+  
+    .subfooter h1 {
+      font-size: 16px;
+    }
+  
+    .subfooter p {
+      font-size: 12px;
+    }
+  }
