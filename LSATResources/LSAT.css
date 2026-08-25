@@ -120,23 +120,6 @@ a {
   padding-block: 108px 92px;
 }
 
-.general .img-container {
-  display: flex;
-  min-height: 300px;
-  align-items: center;
-  justify-content: center;
-  padding: 30px;
-  border: 1px solid var(--line);
-  background: #ffffff;
-}
-
-.general img {
-  display: block;
-  width: min(100%, 300px);
-  max-height: 300px;
-  object-fit: contain;
-}
-
 .general .text-container {
   display: grid;
   max-width: 720px;
