@@ -56,7 +56,7 @@ a {
 .hero {
   position: relative;
   display: flex;
-  min-height: 650px;
+  min-height: 500px;
   background-image:
     linear-gradient(
       rgba(0, 22, 44, 0.14),
