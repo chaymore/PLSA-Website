@@ -43,18 +43,6 @@ a {
   margin-inline: auto;
 }
 
-.eyebrow {
-  color: var(--navy-800);
-  font-size: 0.77rem;
-  font-weight: 700;
-  letter-spacing: 0.17em;
-  text-transform: uppercase;
-}
-
-.eyebrow-light {
-  color: #e8c77f;
-}
-
 .page-hero {
   position: relative;
   display: grid;
