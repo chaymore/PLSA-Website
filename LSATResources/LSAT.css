@@ -100,7 +100,7 @@ a {
 }
 
 /* ==========================================================================
-   Main Content
+   Main Content Layout
    ========================================================================== */
 
 .content-body {
@@ -109,34 +109,59 @@ a {
 }
 
 /* ==========================================================================
-   Welcome Section
+   Welcome / Intro Section (Two-Column Editorial with Expanded Spacing)
    ========================================================================== */
 
 .general {
   display: grid;
-  grid-template-columns: minmax(260px, 0.8fr) minmax(0, 1.4fr);
-  align-items: center;
-  gap: 70px;
-  padding-block: 108px 92px;
+  grid-template-columns: 1.15fr 1fr;
+  align-items: start;
+  gap: 80px;
+  padding-block: 100px 90px;
 }
 
 .general .text-container {
-  display: grid;
-  max-width: 720px;
+  display: flex;
+  flex-direction: column;
   gap: 16px;
+}
+
+.general .text-container::before {
+  color: var(--navy-800);
+  content: "WHAT WE DO";
+  font-family: var(--sans);
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
 }
 
 .general h2 {
   color: var(--navy-950);
-  font-size: clamp(2.05rem, 4vw, 3.55rem);
-  line-height: 1.18;
+  font-family: var(--serif);
+  font-size: clamp(2.4rem, 4.2vw, 3.8rem);
+  font-weight: 700;
+  line-height: 1.12;
+  text-wrap: balance;
 }
 
 .general p {
-  max-width: 680px;
+  font-size: 20px;
+  padding-top: 20px;
+  color: #6B7280;
+}
+
+.general-copy {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding-top: 40px; /* Aligns visually with the left heading baseline */
+}
+
+.general-copy p {
   color: var(--muted);
-  font-size: 1.16rem;
-  line-height: 1.7;
+  font-size: 1.35rem;
+  line-height: 2.5;
 }
 
 /* ==========================================================================
@@ -432,11 +457,12 @@ a {
 @media (max-width: 900px) {
   .general {
     grid-template-columns: 1fr;
-    gap: 40px;
+    gap: 32px;
+    padding-block: 70px 60px;
   }
 
-  .general .img-container {
-    min-height: 260px;
+  .general-copy {
+    padding-top: 0;
   }
 
   .info-grid {
@@ -474,24 +500,14 @@ a {
   }
 
   .general {
-    padding-block: 74px 68px;
-  }
-
-  .general .img-container {
-    min-height: 220px;
-    padding: 24px;
-  }
-
-  .general img {
-    width: min(100%, 230px);
-    max-height: 230px;
+    padding-block: 60px;
   }
 
   .general h2 {
     font-size: clamp(2rem, 9vw, 3rem);
   }
 
-  .general p {
+  .general-copy p {
     font-size: 1.05rem;
   }
 
@@ -565,16 +581,15 @@ a {
   }
 
   .general {
-    padding-block: 60px;
+    padding-block: 50px 40px;
   }
 
-  .general .img-container {
-    min-height: 180px;
+  .general h2 {
+    font-size: clamp(2rem, 8vw, 2.5rem);
   }
 
-  .general img {
-    width: min(100%, 190px);
-    max-height: 190px;
+  .general-copy p {
+    font-size: 1rem;
   }
 
   .section-image-wrapper img {

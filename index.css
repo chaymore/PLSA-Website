@@ -94,7 +94,7 @@ a {
 .section-intro {
   display: grid;
   max-width: 760px;
-  margin-bottom: 48px;
+  margin-bottom: 75px;
   gap: 12px;
 }
 

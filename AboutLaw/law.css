@@ -1,323 +1,420 @@
 @import url("https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Source+Sans+3:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap");
 
+:root {
+  --navy-950: #001c35;
+  --navy-900: #002e5d;
+  --navy-800: #074b76;
+  --blue-100: #e8f2f8;
+  --paper: #fffefa;
+  --gold: #c9a04f;
+  --ink: #162331;
+  --muted: #586675;
+  --line: #d9e0e5;
+  --serif: "Libre Baskerville", Georgia, serif;
+  --sans: "Source Sans 3", "Helvetica Neue", Arial, sans-serif;
+  --shadow: 0 24px 60px rgba(0, 28, 53, 0.1);
+}
+
 /* ==========================================================================
    Base & Reset Styles
    ========================================================================== */
 
-   * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-  }
-  
-  body {
-    font-family: "Source Sans 3", "Helvetica Neue", Arial, sans-serif;
-    background-color: #f9f9f9;
-    color: #333333;
-    line-height: 1.6;
-  }
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
-  h1,
-  h2,
-  h3 {
-    font-family: "Libre Baskerville", Georgia, serif;
-  }
-  
-  .Body {
-    width: 100%;
-    background-color: #f9f9f9;
-  }
-  
-  /* ==========================================================================
-     Header & Navigation
-     ========================================================================== */
-  
-  .Left,
-  .Right {
-    display: flex;
-    gap: 30px;
-    position: absolute;
-    top: 40px;
-    z-index: 10;
-  }
-  
-  .Left {
-    left: 75px;
-  }
-  
-  .Right {
-    right: 75px;
-  }
-  
-  .Left a,
-  .Right a {
-    color: #ffffff;
-    text-decoration: none;
-    font-weight: bold;
-    transition: color 0.2s ease;
-  }
-  
-  .Left a:hover,
-  .Right a:hover {
-    color: #0062b8;
-  }
-  
-  .MenuBar {
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    gap: 50px;
-    position: absolute;
-    top: 500px;
-    width: 100%;
-    height: 50px;
-    background-color: #002e5d;
-    font-size: 20px;
-    z-index: 10;
-  }
-  
-  .MenuBar a {
-    color: #ffffff;
-    text-decoration: none;
-    transition: color 0.2s ease;
-  }
-  
-  .MenuBar a:hover {
-    color: #d3d3d3;
-  }
-  
-  /* ==========================================================================
-     Hero Section
-     ========================================================================== */
-  
-  .Background_Image {
-    position: relative;
-    height: 500px;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.4)), url("https://bit.ly/42d8kSz");
-    background-size: cover;
-    background-position: center;
-  }
-  
-  .Center {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding-top: 215px;
-    color: #ffffff;
-    font-family: "Source Sans 3", "Helvetica Neue", Arial, sans-serif;
-  }
-  
-  .Center h1 {
-    font-size: 50px;
-  }
-  
-  /* ==========================================================================
-     Main Content Layout
-     ========================================================================== */
-  
-  .main-container {
-    max-width: 1200px;
-    margin: 80px auto;
-    padding: 0 20px;
-  }
-  
-  .general {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 40px;
-    background-color: #ffffff;
-    padding: 40px;
-    border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-  }
-  
-  .general .text-container {
-    flex: 1;
-    text-align: left;
-  }
-  
-  .general h2 {
-    font-size: 35px;
-    color: #002e5d;
-    margin-bottom: 15px;
-  }
-  
-  .general p {
-    font-size: 19px;
-    line-height: 1.7;
-    color: #444444;
-  }
-  
-  .general .img-container {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-  }
-  
-  .general img {
-    width: 100%;
-    max-height: 380px;
-    object-fit: cover;
-    border-radius: 6px;
-  }
-  
-  /* ==========================================================================
-     Footer Styles
-     ========================================================================== */
-  
-  .site-footer {
-    background-color: #ffffff;
-    border-top: 1px solid #e2e2e2;
-    margin-top: 80px;
-  }
-  
-  .footer-columns {
-    display: flex;
-    justify-content: space-between;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 50px 20px;
-  }
-  
-  .footer-col {
-    flex: 1;
-    margin: 0 15px;
-  }
-  
-  .footer-col h3 {
-    font-family: "Libre Baskerville", Georgia, serif;
-    font-size: 1rem;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    color: #002e5d;
-    margin-bottom: 16px;
-  }
-  
-  .footer-col p {
-    font-size: 0.95rem;
-    color: #333333;
-  }
-  
-  .footer-col a,
-  .social-link {
-    display: block;
-    color: #333333;
-    text-decoration: none;
-    margin-bottom: 10px;
-    font-size: 0.95rem;
-    transition: color 0.2s ease;
-  }
-  
-  .social-link {
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    width: 100%;
-  }
-  
-  .social-icon {
-    width: 20px;
-    height: 20px;
-    object-fit: contain;
-  }
-  
-  .footer-col a:hover,
-  .social-link:hover {
-    color: #0062b8;
-    text-decoration: underline;
-  }
-  
-  .subfooter {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 125px;
-    background-color: #002e5d;
-    color: #ffffff;
-    text-align: center;
-  }
-  
-  .subfooter h1 {
-    font-size: 20px;
-    margin-bottom: 8px;
-  }
-  
-  .subfooter p {
-    font-size: 14px;
-    opacity: 0.9;
-  }
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--paper);
+  color: var(--ink);
+  font-family: var(--sans);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--serif);
+  text-wrap: balance;
+}
+
+a {
+  color: inherit;
+}
+
+.Body {
+  width: 100%;
+}
 
 /* ==========================================================================
-   Mobile Footer
+   Header & Navigation
    ========================================================================== */
 
-   @media (max-width: 768px) {
+.Left,
+.Right {
+  position: absolute;
+  top: 40px;
+  z-index: 10;
+  display: flex;
+  gap: 30px;
+}
 
-    .site-footer {
-      margin-top: 50px;
-    }
-  
-    .footer-columns {
-      flex-direction: column;
-      padding: 35px 25px;
-      gap: 30px;
-    }
-  
-    .footer-col {
-      margin: 0;
-      width: 100%;
-    }
-  
-    .footer-col h3 {
-      margin-bottom: 12px;
-      font-size: 0.95rem;
-    }
-  
-    .footer-col a,
-    .social-link {
-      font-size: 0.95rem;
-      margin-bottom: 12px;
-    }
-  
-    .subfooter {
-      padding: 20px 15px;
-    }
-  
-    .subfooter h1 {
-      font-size: 18px;
-    }
-  
-    .subfooter p {
-      font-size: 13px;
-      line-height: 1.5;
-    }
+.Left {
+  left: 75px;
+}
+
+.Right {
+  right: 75px;
+}
+
+.Left a,
+.Right a {
+  color: #ffffff;
+  font-weight: 700;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.Left a:hover,
+.Right a:hover {
+  color: #dfbd76;
+}
+
+.MenuBar {
+  position: absolute;
+  top: 500px;
+  z-index: 10;
+  display: flex;
+  width: 100%;
+  height: 54px;
+  align-items: center;
+  justify-content: space-around;
+  gap: 50px;
+  background-color: var(--navy-900);
+  font-size: 1.1rem;
+}
+
+.MenuBar a {
+  color: #ffffff;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.MenuBar a:hover {
+  color: #dfbd76;
+}
+
+/* ==========================================================================
+   Hero Section
+   ========================================================================== */
+
+.Background_Image {
+  position: relative;
+  display: flex;
+  min-height: 500px;
+  background-image:
+    linear-gradient(
+      rgba(0, 22, 44, 0.14),
+      rgba(0, 19, 38, 0.5)
+    ),
+    url("https://bit.ly/42d8kSz");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.Background_Image::after {
+  position: absolute;
+  inset: auto 0 0;
+  height: 130px;
+  background: linear-gradient(
+    to top,
+    rgba(0, 22, 43, 0.36),
+    transparent
+  );
+  content: "";
+}
+
+.Center {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  width: min(1180px, calc(100% - 48px));
+  margin: auto;
+  padding-top: 70px;
+  place-items: center;
+  text-align: center;
+}
+
+.Center h1 {
+  max-width: 1000px;
+  color: #ffffff;
+  font-family: var(--serif);
+  font-size: clamp(3rem, 6vw, 5.5rem);
+  line-height: 1.08;
+  text-shadow: 0 4px 24px rgba(0, 17, 34, 0.34);
+}
+
+/* ==========================================================================
+   Main Content Layout
+   ========================================================================== */
+
+.main-container {
+  width: min(1180px, calc(100% - 48px));
+  margin: 90px auto;
+}
+
+/* ==========================================================================
+   Welcome Section (Two-Column Editorial Style)
+   ========================================================================== */
+
+.general {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  align-items: start;
+  gap: 80px;
+  padding-block: 20px 40px;
+}
+
+.general .text-container {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.general .text-container::before {
+  color: var(--navy-800);
+  content: "WHAT WE DO";
+  font-family: var(--sans);
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.general h2 {
+  color: var(--navy-950);
+  font-family: var(--serif);
+  font-size: clamp(2.4rem, 4.2vw, 3.8rem);
+  font-weight: 700;
+  line-height: 1.12;
+  text-wrap: balance;
+}
+
+.general p {
+  color: var(--muted);
+  font-size: 1.15rem;
+  line-height: 1.75;
+}
+
+.general .img-container {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding-top: 36px;
+}
+
+.general img {
+  display: block;
+  width: 100%;
+  max-height: 420px;
+  border-radius: 8px;
+  object-fit: cover;
+  box-shadow: var(--shadow);
+}
+
+/* ==========================================================================
+   Footer Styles
+   ========================================================================== */
+
+.site-footer {
+  margin-top: 90px;
+  border-top: 1px solid var(--line);
+  background-color: #ffffff;
+}
+
+.footer-columns {
+  display: flex;
+  justify-content: space-between;
+  width: min(1200px, calc(100% - 48px));
+  margin: 0 auto;
+  padding: 50px 20px;
+}
+
+.footer-col {
+  flex: 1;
+  margin: 0 15px;
+}
+
+.footer-col h3 {
+  margin-bottom: 16px;
+  color: var(--navy-900);
+  font-family: var(--serif);
+  font-size: 1rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.footer-col p {
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.footer-col a,
+.social-link {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+  color: var(--ink);
+  font-size: 0.95rem;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.social-icon {
+  width: 18px;
+  height: 18px;
+  object-fit: contain;
+}
+
+.footer-col a:hover,
+.social-link:hover {
+  color: var(--navy-800);
+  text-decoration: underline;
+}
+
+.subfooter {
+  display: flex;
+  flex-direction: column;
+  height: 125px;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--navy-900);
+  color: #ffffff;
+  text-align: center;
+}
+
+.subfooter h1 {
+  margin-bottom: 6px;
+  font-size: 20px;
+}
+
+.subfooter p {
+  font-size: 14px;
+  opacity: 0.85;
+}
+
+/* ==========================================================================
+   Responsive Breakpoints
+   ========================================================================== */
+
+@media (max-width: 900px) {
+  .general {
+    grid-template-columns: 1fr;
+    gap: 32px;
   }
-  
-  
-  /* Extra-small phones */
-  @media (max-width: 480px) {
-  
-    .footer-columns {
-      padding: 30px 20px;
-      gap: 25px;
-    }
-  
-    .footer-col h3 {
-      font-size: 0.9rem;
-    }
-  
-    .footer-col a,
-    .social-link {
-      font-size: 0.9rem;
-    }
-  
-    .subfooter h1 {
-      font-size: 16px;
-    }
-  
-    .subfooter p {
-      font-size: 12px;
-    }
+
+  .general .img-container {
+    padding-top: 0;
   }
+}
+
+@media (max-width: 768px) {
+  .site-footer {
+    margin-top: 50px;
+  }
+
+  .footer-columns {
+    flex-direction: column;
+    width: min(100% - 32px, 1180px);
+    gap: 30px;
+    padding: 35px 25px;
+  }
+
+  .footer-col {
+    width: 100%;
+    margin: 0;
+  }
+
+  .footer-col h3 {
+    margin-bottom: 12px;
+    font-size: 0.95rem;
+  }
+
+  .footer-col a,
+  .social-link {
+    margin-bottom: 12px;
+    font-size: 0.95rem;
+  }
+
+  .subfooter {
+    padding: 20px 15px;
+  }
+
+  .subfooter h1 {
+    font-size: 18px;
+  }
+
+  .subfooter p {
+    font-size: 13px;
+    line-height: 1.5;
+  }
+}
+
+@media (max-width: 480px) {
+  .main-container {
+    width: min(100% - 32px, 1180px);
+    margin: 60px auto;
+  }
+
+  .general h2 {
+    font-size: clamp(2rem, 8vw, 2.5rem);
+  }
+
+  .general p {
+    font-size: 1.05rem;
+  }
+
+  .footer-columns {
+    gap: 25px;
+    padding: 30px 20px;
+  }
+
+  .footer-col h3 {
+    font-size: 0.9rem;
+  }
+
+  .footer-col a,
+  .social-link {
+    font-size: 0.9rem;
+  }
+
+  .subfooter h1 {
+    font-size: 16px;
+  }
+
+  .subfooter p {
+    font-size: 12px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .Left a,
+  .Right a,
+  .MenuBar a,
+  .footer-col a,
+  .social-link {
+    transition: none;
+  }
+}
