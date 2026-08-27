@@ -108,6 +108,19 @@ a {
   margin-inline: auto;
 }
 
+.section-shell {
+  width: min(1180px, calc(100% - 48px));
+  margin-inline: auto;
+}
+
+.eyebrow {
+  color: var(--navy-800);
+  font-size: 0.77rem;
+  font-weight: 700;
+  letter-spacing: 0.17em;
+  text-transform: uppercase;
+}
+
 /* ==========================================================================
    Welcome / Intro Section (Two-Column Editorial with Expanded Spacing)
    ========================================================================== */
@@ -375,6 +388,90 @@ a {
 }
 
 /* ==========================================================================
+   Closing / CTA Section
+   ========================================================================== */
+
+.closing-section {
+  display: grid;
+  padding-block: 110px;
+  align-items: center;
+  gap: 42px;
+  grid-template-columns: 140px minmax(0, 1fr) auto;
+}
+
+.closing-logo {
+  width: 140px;
+  height: 140px;
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  background: #ffffff;
+  object-fit: cover;
+}
+
+.closing-copy {
+  display: grid;
+  gap: 14px;
+}
+
+.closing-copy h2 {
+  max-width: 760px;
+  color: var(--navy-950);
+  font-size: clamp(1.8rem, 3.2vw, 2.8rem);
+  line-height: 1.18;
+}
+
+.closing-copy > p:last-child {
+  max-width: 680px;
+  color: var(--muted);
+  font-size: 1.16rem;
+}
+
+.closing-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.button {
+  display: inline-flex;
+  min-height: 50px;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid transparent;
+  padding: 12px 22px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: background-color 180ms ease, border-color 180ms ease, color 180ms ease, transform 180ms ease;
+}
+
+.button:hover {
+  transform: translateY(-2px);
+}
+
+.button:focus-visible {
+  outline: 3px solid var(--gold);
+  outline-offset: 4px;
+}
+
+.button-primary {
+  background: var(--gold);
+  color: var(--navy-950);
+}
+
+.button-primary:hover {
+  background: #dfbd76;
+}
+
+.button-secondary {
+  border-color: var(--navy-900);
+  color: var(--navy-900);
+}
+
+.button-secondary:hover {
+  background: var(--blue-100);
+}
+
+/* ==========================================================================
    Footer
    ========================================================================== */
 
@@ -480,6 +577,21 @@ a {
   .resource-card {
     min-height: 280px;
   }
+
+  .closing-section {
+    grid-template-columns: 100px 1fr;
+  }
+
+  .closing-logo {
+    width: 100px;
+    height: 100px;
+  }
+
+  .closing-actions {
+    grid-column: 2;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
 }
 
 /* ==========================================================================
@@ -532,6 +644,20 @@ a {
   .resource-card {
     min-height: 0;
     padding: 28px;
+  }
+
+  .closing-section {
+    padding-block: 78px;
+    grid-template-columns: 1fr;
+  }
+
+  .closing-logo {
+    width: 88px;
+    height: 88px;
+  }
+
+  .closing-actions {
+    grid-column: auto;
   }
 
   .footer-columns {
@@ -649,7 +775,8 @@ a {
   .info-card,
   .info-card::before,
   .resource-card,
-  .resource-card::before {
+  .resource-card::before,
+  .button {
     transition: none;
   }
 }
