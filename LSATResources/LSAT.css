@@ -128,7 +128,7 @@ a {
 
 .general .text-container::before {
   color: var(--navy-800);
-  content: "WHAT WE DO";
+  content: "HOW TO EXCEL";
   font-family: var(--sans);
   font-size: 0.85rem;
   font-weight: 700;
