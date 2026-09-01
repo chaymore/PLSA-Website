@@ -62,7 +62,10 @@ async function getRole(uid) {
 // ---- Wire up the nav on every page load ----
 
 function setVisible(el, visible) {
-  if (el) el.style.display = visible ? "" : "none";
+  // NOTE: must set an explicit display value when showing, not "".
+  // "" just clears the inline style and falls back to the CSS rule,
+  // which is `display: none` for these elements — so they'd never appear.
+  if (el) el.style.display = visible ? "inline-flex" : "none";
 }
 
 onAuthStateChanged(auth, async (user) => {
