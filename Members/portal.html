@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Member Portal | BYU PLSA</title>
+  <link rel="stylesheet" href="../navigation.css">
+  <link rel="stylesheet" href="portal.css">
+</head>
+<body>
+
+  <div id="nav-placeholder"></div>
+  <script type="module" src="/nav-loader.js"></script>
+
+  <main class="portal-container">
+    <h1>Member Portal</h1>
+    <p>Welcome! This page is only reachable if you're signed in and recognized as a PLSA member or officer.</p>
+
+    <section id="officer-section" data-visible-to="officer">
+      <h2>Officers only</h2>
+      <p>This block only appears for officers — anyone without that role never sees this text, because it's hidden by CSS and, more importantly, real officer content should be fetched from Firestore's <code>officerContent</code> collection rather than written directly in this HTML.</p>
+    </section>
+  </main>
+
+  <!-- Redirects away if not signed in, or not at least a "member" -->
+  <script type="module" src="../protect-page.js" data-min-role="member"></script>
+
+</body>
+</html>
