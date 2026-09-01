@@ -129,6 +129,51 @@ h1 {
   background: var(--blue-100);
 }
 
+.email-copy {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 22px;
+  border: 1px solid var(--line);
+  background: var(--blue-100);
+  padding: 10px 10px 10px 16px;
+  gap: 12px;
+}
+
+.email-text {
+  overflow: hidden;
+  color: var(--navy-950);
+  font-weight: 600;
+  font-size: 0.98rem;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.copy-button {
+  flex-shrink: 0;
+  border: 1px solid var(--navy-900);
+  background: #ffffff;
+  color: var(--navy-900);
+  font-family: var(--sans);
+  font-size: 0.9rem;
+  font-weight: 700;
+  padding: 8px 16px;
+  cursor: pointer;
+  transition: background-color 180ms ease, color 180ms ease, border-color 180ms ease;
+}
+
+.copy-button:hover {
+  background: var(--navy-900);
+  color: #ffffff;
+}
+
+.copy-button.copied {
+  border-color: var(--gold);
+  background: var(--gold);
+  color: var(--navy-950);
+}
+
 .back-home {
   display: inline-block;
   margin-top: 48px;

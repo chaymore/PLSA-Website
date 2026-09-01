@@ -32,12 +32,35 @@
     <div class="option-card">
       <h2>Already a member?</h2>
       <p>If you've joined but this page still isn't unlocking for you, your account may not be marked as a member yet. Reach out to our VP of Technology and we'll get it sorted out.</p>
-      <a class="button button-secondary" href="mailto:palmer.byu.plsa@gmail.com?subject=Member%20access%20issue">Contact VP of Technology</a>
+      <div class="email-copy" data-email="palmer.byu.plsa@gmail.com">
+        <span class="email-text">palmer.byu.plsa@gmail.com</span>
+        <button type="button" class="copy-button" aria-label="Copy email address">Copy</button>
+      </div>
     </div>
   </div>
 
   <a class="back-home" href="/index.html">← Back to homepage</a>
 </main>
+
+<script>
+  document.querySelectorAll(".copy-button").forEach((btn) => {
+    btn.addEventListener("click", async () => {
+      const email = btn.closest(".email-copy").dataset.email;
+      try {
+        await navigator.clipboard.writeText(email);
+        const original = btn.textContent;
+        btn.textContent = "Copied!";
+        btn.classList.add("copied");
+        setTimeout(() => {
+          btn.textContent = original;
+          btn.classList.remove("copied");
+        }, 1800);
+      } catch (err) {
+        console.error("Clipboard copy failed:", err);
+      }
+    });
+  });
+</script>
 
 </body>
 </html>
