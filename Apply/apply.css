@@ -16,6 +16,11 @@
   --shadow: 0 24px 60px rgba(0, 28, 53, 0.12);
 }
 
+/* Hidden until protect-page.js confirms the visitor is a member */
+body:not(.auth-ready) main {
+  visibility: hidden;
+}
+
 * {
   box-sizing: border-box;
   margin: 0;

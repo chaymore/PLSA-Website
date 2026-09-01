@@ -1,3 +1,117 @@
+
+Claude finished the response
+Welcome, Palmer! I’m Claude.
+Bring me anything—a tough problem, a half-formed idea, something you need to write. We’ll figure it out together.
+
+Where do you want to start?
+
+This one's public too, and correctly formed — footer links all use the right ../ paths, no issues. Same minor auth.js double-load as the others, purely optional to clean up.
+
+That covers every page. Summary of where things stand:
+
+Pages needing role restriction: just Members/portal.html, which is already correctly wired up with protect-page.js data-min-role="member" and the body:not(.auth-ready) main hide-until-verified pattern in portal.css.
+
+All other pages (index.html, LSAT.html, events.html, bio.html, apply.html, law.html) are public — no gating needed, all confirmed fine.
+
+Two small cleanups, whenever convenient, not urgent:
+
+Fix the 5 broken footer links in apply.html (missing ../)
+Optional: remove the redundant <script type="module" src="../auth.js"></script> head-tag from LSAT.html, events.html, bio.html, apply.html, and law.html
+What's left for the actual restriction to work: the client-side gating is done, but as noted earlier, it's UX only — it doesn't stop someone from viewing the raw HTML or, more importantly, doesn't stop unauthorized reads/writes directly against Firestore. Since portal.html currently only has placeholder text (no real Firestore-fetched content yet), you're not exposed today. But you'll want real Firestore Security Rules before storing anything sensitive there — want me to write those next?
+
+
+@import url("https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Source+Sans+3:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap"); :root { --navy-950: #001c35; --navy-900: #002e5d; --navy-800: #074b76; --blue-100: #e8f2f8; --paper: #fffefa; --gold: #c9a04f
+
+pasted
+
+That's law.css — page-specific styling only, nothing auth-related, no issues.
+
+That's all the files. Here's the final state:
+
+Restriction requirement: ✅ done. Members/portal.html is the only page requiring member access, and it's correctly wired with protect-page.js, the data-min-role="member" attribute, and the body:not(.auth-ready) main hide pattern in portal.css.
+
+Outstanding cleanup items (not blockers, whenever you get to them):
+
+apply.html footer links missing ../ (5 broken links)
+Optional: redundant auth.js <head> import on 5 pages
+Still needed for real protection: Firestore Security Rules — right now, anyone who knows your Firestore project could theoretically read/write the users collection directly through the Firebase SDK, bypassing your website entirely, unless rules are locked down. This matters more once portal.html's officer-only section pulls real content from Firestore.
+
+Want me to write those Security Rules now?
+
+Ok, i just wanted you to have all of the pages.
+
+Sounds good — got the full picture now. Whenever you're ready to lock down the Firestore side (Security Rules) or want help with anything else on the site, just let me know.
+
+I want LSAT locked to only members, Apply as well as Events
+
+
+Thought for 14s
+Thought for 14s
+Two things this implies, worth confirming before I make the edits:
+
+Since these become member-only, the nav links for LSAT/Apply/Events should probably be hidden from non-members too (same as "Member Portal" already is) — otherwise guests see links that redirect them away when clicked.
+Apply's footer also had those 5 broken links (missing ../) — want me to fix those in the same pass since I'll be touching that file anyway?
+Should the LSAT/Apply/Events nav links be hidden from non-members (like Member Portal already is), or stay visible but redirect on click?
+Keep visible for everyone
+
+Thought for 6s
+Thought for 6s
+Got it — keeping them visible, just gating access on click. Building the three page/CSS pairs now, and I'll fix the broken apply.html footer links in the same pass since I'm already in that file.
+
+
+Created a file, viewed a file
+Created a file, viewed a file
+I'll build the CSS additions as small snippets to add to your existing files rather than regenerating all that CSS from scratch (less room for transcription errors on 400+ line files). Add this one rule to each of the three CSS files — anywhere is fine, I'd put it near the top after the :root block:
+
+LSATResources/LSAT.css, Apply/apply.css, EventsCalendar/events.css — add to each:
+
+css
+/* Hidden until protect-page.js confirms the visitor is a member */
+body:not(.auth-ready) main {
+  visibility: hidden;
+}
+Now the two remaining HTML files:
+
+
+Created 2 files, read a file
+Created 2 files, read a file
+Here's a summary of what changed in each:
+
+All three (LSAT.html, apply.html, events.html):
+
+Removed the redundant <script type="module" src="../auth.js"></script> from <head> (dead weight now that protect-page.js handles auth loading)
+Added <script type="module" src="../protect-page.js" data-min-role="member"></script> at the end of <body>
+apply.html specifically: fixed the 5 broken footer links to use ../ paths, and changed the "Apply" link itself to href="#" since it's now the current page (matching the pattern the other pages use for their own nav item).
+
+Still needed — paste this into each CSS file (LSAT.css, apply.css, events.css):
+
+css
+/* Hidden until protect-page.js confirms the visitor is a member */
+body:not(.auth-ready) main {
+  visibility: hidden;
+}
+One thing to flag on events.html: its <main> wraps the hero/calendar/closing sections, but note the .Body div and <header class="Background_Image"> sit outside <main> — so the hero header will render immediately while the calendar content underneath stays hidden until the role check passes. That's probably fine visually (looks like a loading state), but let me know if you'd rather hide the whole .Body div instead so nothing shows until verified.
+
+
+Lsat
+Code·HTML 
+
+Apply
+Code·HTML 
+
+Events
+Code·HTML 
+
+Next time, try this in Cowork
+
+Hand off complex tasks for Claude to handle independently. Come back to finished results.
+
+Write a message…
+
+
+
+
+Events · HTML
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,23 +121,21 @@
   <link rel="stylesheet" href="events.css">
   <link rel="stylesheet" href="../navigation.css">
 </head>
-
-<script type="module" src="../auth.js"></script>
-
+ 
 <body>
-
+ 
 <div id="nav-placeholder"></div>
 <script type="module" src="/nav-loader.js"></script>
-
+ 
 <div class="Body">
-
+ 
   <!-- Hero Header -->
   <header class="Background_Image">
     <div class="Center">
       <h1>Events Calendar</h1>
     </div>
   </header>
-
+ 
   <!-- Main Section: Welcome Text + Events Sidebar -->
   <main class="main-container">
     <div class="events-hero-layout">
@@ -35,7 +147,7 @@
           All of the BYU PLSA events are listed in the interactive calendar below, and the next five upcoming events are listed on the right! Make sure to add them to your personal calendar. Click on any event in the calendar to add it.
         </p>
       </section>
-
+ 
       <!-- Upcoming Events Sidebar -->
       <aside id="events-sidebar" class="events-sidebar">
         <h3>Upcoming Events</h3>
@@ -43,15 +155,15 @@
           <li class="loading">Loading upcoming events...</li>
         </ul>
       </aside>
-
+ 
     </div>
-
+ 
     <!-- Interactive Calendar Section -->
     <section class="calendar-section">
       <div class="subheader">
         <h2>Pre-Law Student Association Calendar</h2>
       </div>
-
+ 
       <div class="calendar-container">
         <iframe 
           src="https://calendar.google.com/calendar/embed?height=600&wkst=1&ctz=America%2FDenver&showPrint=0&src=ZDMwODlmY2RkMWJjOWZlNDA2MGMwMWY0MmJmODI2ZjIxMWMzMzUzNGZjMWE4YmIwOGQ1ODU1MjU0YzkwOTJlZEBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&color=%239e69af" 
@@ -62,7 +174,7 @@
         </iframe>
       </div>
     </section>
-
+ 
     <section class="closing-section section-shell" aria-labelledby="closing-title">
       <img class="closing-logo" src="../Images/BYU PLSA Logo.JPG" alt="" loading="lazy">
       <div class="closing-copy">
@@ -75,11 +187,11 @@
         <a class="button button-secondary" href="https://www.instagram.com/byu_plsa/" target="_blank" rel="noopener noreferrer">Follow on Instagram</a>
       </div>
     </section>
-
+ 
   </main>
-
+ 
 </div>
-
+ 
 <!-- Footer -->
 <footer class="site-footer">
   <div class="footer-columns">
@@ -88,19 +200,19 @@
       <h3>Contact</h3>
       <p>Email: prelawclub@byu.edu</p>
     </div>
-
+ 
     <div class="footer-col">
       <h3>Resources</h3>
       <a href="../LSATResources/LSAT.html">LSAT Prep</a>
       <a href="../AboutLaw/law.html">About Law</a>
       <a href="../Bio/bio.html">PLSA Bio</a>
     </div>
-
+ 
     <div class="footer-col">
       <h3>Events</h3>
       <a href="#">Calendar</a>
     </div>
-
+ 
     <div class="footer-col">
       <h3>Connect</h3>
       <a href="https://www.instagram.com/byu_plsa/" target="_blank" class="social-link">
@@ -116,15 +228,20 @@
         LinkedIn
       </a>
     </div>
-
+ 
   </div>
-
+ 
   <div class="subfooter">
     <h1 class="footerheader">BYU Pre-Law Student Association</h1>
     <p>Provo, UT 84602, USA | &copy; BYU PLSA 2026</p>
   </div>
 </footer>
-
+ 
 <script src="events.js"></script>
+ 
+<!-- Redirects away if not signed in, or not at least a "member" -->
+<script type="module" src="../protect-page.js" data-min-role="member"></script>
+ 
 </body>
 </html>
+ 

@@ -9,8 +9,6 @@
   <link rel="stylesheet" href="../navigation.css">
 </head>
 
-<script type="module" src="../auth.js"></script>
-
 <body>
 
 <div id="nav-placeholder"></div>
@@ -137,15 +135,15 @@
     </div>
     <div class="footer-col">
       <h3>Resources</h3>
-      <a href="LSATResources/LSAT.html">LSAT Prep</a>
-      <a href="AboutLaw/law.html">Explore Law</a>
-      <a href="Apply/apply.html">Apply</a>
-      <a href="Bio/bio.html">About PLSA</a>
+      <a href="../LSATResources/LSAT.html">LSAT Prep</a>
+      <a href="../AboutLaw/law.html">Explore Law</a>
+      <a href="#">Apply</a>
+      <a href="../Bio/bio.html">About PLSA</a>
     </div>
 
     <div class="footer-col">
       <h3>Events</h3>
-      <a href="EventsCalendar/events.html">Calendar</a>
+      <a href="../EventsCalendar/events.html">Calendar</a>
     </div>
 
     <div class="footer-col">
@@ -172,6 +170,9 @@
     <p>Provo, UT 84602, USA | &copy; BYU PLSA 2026</p>
   </div>
 </footer>
+
+  <!-- Redirects away if not signed in, or not at least a "member" -->
+  <script type="module" src="../protect-page.js" data-min-role="member"></script>
 
 </body>
 </html>

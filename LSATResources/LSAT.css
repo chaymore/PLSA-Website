@@ -16,6 +16,11 @@
   --shadow: 0 24px 60px rgba(0, 28, 53, 0.1);
 }
 
+/* Hidden until protect-page.js confirms the visitor is a member */
+body:not(.auth-ready) main {
+  visibility: hidden;
+}
+
 /* ==========================================================================
    Base
    ========================================================================== */

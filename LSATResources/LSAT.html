@@ -8,8 +8,6 @@
   <link rel="stylesheet" href="../navigation.css">
 </head>
 
-<script type="module" src="../auth.js"></script>
-
 <body>
 
 <div id="nav-placeholder"></div>
@@ -159,6 +157,9 @@
       <p>Provo, UT 84602, USA | &copy; BYU PLSA 2026</p>
     </div>
   </footer>
+
+  <!-- Redirects away if not signed in, or not at least a "member" -->
+  <script type="module" src="../protect-page.js" data-min-role="member"></script>
 
 </body>
 </html>
