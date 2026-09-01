@@ -11,9 +11,11 @@ import { auth, db } from "./auth.js";
 import { onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.13.0/firebase-auth.js";
 import { doc, getDoc } from "https://www.gstatic.com/firebasejs/10.13.0/firebase-firestore.js";
 
-const thisScript = document.currentScript;
+// document.currentScript is unreliable inside type="module" scripts,
+// so find the tag by matching its src instead.
+const thisScript = document.querySelector('script[src$="protect-page.js"]');
 const minRole = thisScript?.dataset.minRole || "member"; // "member" or "officer"
-const REDIRECT_TO = "/index.html";
+const REDIRECT_TO = "/Restricted/restricted.html";
 
 const rank = { guest: 0, pending: 0, member: 1, officer: 2 };
 
