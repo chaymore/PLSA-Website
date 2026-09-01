@@ -67,15 +67,19 @@ function setVisible(el, visible) {
 
 onAuthStateChanged(auth, async (user) => {
   const joinLink = document.querySelector(".join-link");
+  const loginLink = document.querySelector(".login-link");
+  const nameLink = document.getElementById("account-name");
+  const logoutLink = document.getElementById("logout-link");
   const memberEls = document.querySelectorAll("[data-visible-to='member']");
   const officerEls = document.querySelectorAll("[data-visible-to='officer']");
-  const accountLink = document.getElementById("account-info");
 
   if (!user) {
     setVisible(joinLink, true);
+    setVisible(loginLink, true);
+    setVisible(nameLink, false);
+    setVisible(logoutLink, false);
     memberEls.forEach((el) => setVisible(el, false));
     officerEls.forEach((el) => setVisible(el, false));
-    setVisible(accountLink, false);
     return;
   }
 
@@ -84,13 +88,14 @@ onAuthStateChanged(auth, async (user) => {
   const isOfficer = role === "officer";
 
   setVisible(joinLink, false);
+  setVisible(loginLink, false);
+  if (nameLink) {
+    nameLink.textContent = user.displayName?.split(" ")[0] || "Account";
+    setVisible(nameLink, true);
+  }
+  setVisible(logoutLink, true);
   memberEls.forEach((el) => setVisible(el, isMember));
   officerEls.forEach((el) => setVisible(el, isOfficer));
-
-  if (accountLink) {
-    accountLink.textContent = user.displayName?.split(" ")[0] || "Account";
-    setVisible(accountLink, true);
-  }
 });
 
 // Expose to inline onclick handlers if you're not using modules everywhere
