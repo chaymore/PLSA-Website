@@ -10,6 +10,11 @@
   --sans: "Source Sans 3", "Helvetica Neue", Arial, sans-serif;
 }
 
+/* NOTE: page-level "hide until authorized" gating is handled per-page
+   (see e.g. Members/portal.css using `body:not(.auth-ready) main`),
+   not globally here — that keeps the nav bar itself visible immediately
+   while just the protected content waits on protect-page.js. */
+
 .site-navigation {
   position: sticky;
   top: 0;
@@ -85,9 +90,12 @@
   color: var(--navy-950) !important;
 }
 
-/* Signed-in-only controls: hidden by default; auth.js reveals them */
+/* Signed-in-only controls: hidden by default; auth.js reveals them.
+   .auth-link covers other signed-in-only nav items (e.g. Member Portal)
+   that should match this same look. */
 #account-name,
-#logout-link {
+#logout-link,
+.auth-link {
   display: none;
   align-items: center;
   padding: 8px 16px;
@@ -99,7 +107,8 @@
 }
 
 #account-name:hover,
-#logout-link:hover {
+#logout-link:hover,
+.auth-link:hover {
   border-color: var(--gold);
   color: var(--gold) !important;
 }
